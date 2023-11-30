@@ -12,7 +12,6 @@ export default {
     colors:{
       violetlight:"#e0aaff",
       primary:"#284b63",
-      seco
       violetdark:"#9d4edd"
     },
     extend: {},
