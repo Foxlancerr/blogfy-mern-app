@@ -6,15 +6,16 @@ export default {
   ],
 
   theme: {
-    fontFamily: {
-      inter: ['Inter', 'sans-serif']
+    extend: {
+      colors: {
+        violetlight: "#e0aaff",
+        primary: "#284b63",
+        violetdark: "#9d4edd"
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif']
+      },
     },
-    colors:{
-      violetlight:"#e0aaff",
-      primary:"#284b63",
-      violetdark:"#9d4edd"
-    },
-    extend: {},
   },
   plugins: [],
 }

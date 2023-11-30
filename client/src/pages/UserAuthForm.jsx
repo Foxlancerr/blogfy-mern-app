@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const UserAuthForm = ({ pageUrl }) => {
   return (
-    <div className="flex justify-center text-white items-center h-screen flex-col bg-red-300  bg-violetlight">
+    <div className="flex justify-center items-center h-screen flex-col bg-violetlight">
       <h1 className="text-2xl sm:text-3xl font-inter font-bold mb-3">
         {pageUrl == "login" ? "welcome back" : "continue for signup"}
       </h1>
