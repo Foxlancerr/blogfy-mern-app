@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const UserAuthForm = ({ pageUrl }) => {
   return (
     <div className="flex justify-center items-center h-screen flex-col bg-violetlight">
-      <h1 className="text-2xl sm:text-3xl font-inter font-bold mb-3">
+      <h1 className="text-3xl text-center capitalize sm:text-3xl font-inter font-bold mb-[42px]">
         {pageUrl == "login" ? "welcome back" : "continue for signup"}
       </h1>
-      <form className="flex gap-2 flex-col">
+      <form className="flex flex-col  max-[400px] gap-4">
         {pageUrl !== "login" ? (
           <InputBox
             type="text"
@@ -33,10 +33,10 @@ const UserAuthForm = ({ pageUrl }) => {
         ></InputBox>
         <button>{pageUrl == "login" ? "login" : "register"}</button>
       </form>
-      <div className="flex gap-2">
-        <hr className="h-[2px]" />
+      <div className="flex gap-2 w-full items-center relative opacity-50">
+        <hr className="border-b-2 w-1/2" />
         <p>OR</p>
-        <hr />
+        <hr className="border-b-2 w-1/2"/>
       </div>
       {pageUrl !== "login" ? <div>
         <p>already account</p>
