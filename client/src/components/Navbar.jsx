@@ -3,8 +3,8 @@ import { Outlet } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className=" bg-violetdark text-primary">
-        <h1 className="w-full p-2 text-center">Navbar</h1>
+      <div className=" bg-violetdark text-primary h-[60px]">
+        <h1 className="">Navbar</h1>
       </div>
       <Outlet></Outlet>
     </>
