@@ -1,11 +1,12 @@
 import React from "react";
 import { InputBox } from "../components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoMdKey } from "react-icons/io";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 
 const UserAuthForm = ({ pageUrl }) => {
+  const navigate = useNavigate()
   return (
     <div className="flex justify-center items-center h-[calc(100vh-60px)] bg-violetlight">
       <div className="bg-slate-100/70 p-16 rounded-lg flex justify-center flex-col items-center gap-3 h-[450px] w-[400px]">
@@ -36,8 +37,11 @@ const UserAuthForm = ({ pageUrl }) => {
             id={3}
           ></InputBox>
           <button
-            type="submit"
+            
             className="py-2 px-10 mt-3 bg-primary/80 transition-all ease-in duration-100 hover:bg-primary rounded-full w-max text-white font-bold font-inter"
+            onClick={() => {
+              pageUrl == "login" ? navigate("/") : navigate("/login");
+            }}
           >
             {pageUrl == "login" ? "login" : "register"}
           </button>
