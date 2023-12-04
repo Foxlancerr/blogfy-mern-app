@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaRegEyeSlash } from "react-icons/fa6";
 
-const InputBox = ({ type, placeholder, icon, id, value }) => {
+const InputBox = ({ type, placeholder, icon, id, value,name }) => {
   let [passwordVisible, setPasswordVisible] = useState(false);
   return (
     <div className="relative p-2 bg-primary/10 hover:bg-primary/30 transition-all ease-in flex justify-between gap-3 rounded-md w-full">
@@ -10,11 +10,13 @@ const InputBox = ({ type, placeholder, icon, id, value }) => {
         {icon}
       </span>
       <input
+        autoComplete="true"
         defaultValue={value}
         id={id}
         type={
           type === "password" ? (passwordVisible ? "text" : "password") : type
         }
+        name={name}
         placeholder={placeholder}
         className="border-none outline-none bg-transparent"
       />

@@ -6,18 +6,37 @@ import { IoMdKey } from "react-icons/io";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 
 const UserAuthForm = ({ pageUrl }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  // form submission and data is getted.
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = new FormData(document.getElementById("form-submit"));
+    let formDataGetted = [];
+    for (let [key, value] of form) {
+      formDataGetted.push({ [key]: value });
+    }
+    console.log(formDataGetted);
+
+    pageUrl == "login" ? navigate("/") : navigate("/login");
+  };
+
   return (
     <div className="flex justify-center items-center h-[calc(100vh-60px)] bg-violetlight">
       <div className="bg-slate-100/70 p-16 rounded-lg flex justify-center flex-col items-center gap-3 h-[450px] w-[400px]">
         <h1 className="text-3xl text-center capitalize sm:text-3xl font-inter text-violetdark font-bold mb-[30px]">
           {pageUrl == "login" ? "welcome back" : "continue for signup"}
         </h1>
-        <form className="flex flex-col items-center justify-center max-[400px] gap-3">
+        <form
+          id="form-submit"
+          className="flex flex-col items-center justify-center max-[400px] gap-3"
+        >
           {pageUrl !== "login" ? (
             <InputBox
               type="text"
               placeholder="username"
+              name="username"
               icon={<FaRegUserCircle />}
               id={1}
             ></InputBox>
@@ -27,20 +46,23 @@ const UserAuthForm = ({ pageUrl }) => {
           <InputBox
             type="email"
             placeholder="email"
+            name="email"
             icon={<MdOutlineAlternateEmail />}
             id={2}
           ></InputBox>
           <InputBox
             type="password"
+            name="password"
             placeholder="password"
             icon={<IoMdKey />}
             id={3}
           ></InputBox>
           <button
-            
+            id="btn-submit"
+            type="submit"
             className="py-2 px-10 mt-3 bg-primary/80 transition-all ease-in duration-100 hover:bg-primary rounded-full w-max text-white font-bold font-inter"
-            onClick={() => {
-              pageUrl == "login" ? navigate("/") : navigate("/login");
+            onClick={(e) => {
+              handleSubmit(e);
             }}
           >
             {pageUrl == "login" ? "login" : "register"}
