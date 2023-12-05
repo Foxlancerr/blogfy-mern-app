@@ -11,6 +11,8 @@ router.route('/')
 router.route('/signup')
     .post(async (req, res) => {
         console.log(req.body);
+        console.log(req.body);
+        console.log(req.body);
 
         try {
             User.create({
@@ -22,7 +24,7 @@ router.route('/signup')
             console.log(err.message);
         }
 
-        res.json({"message": "New user created successfully"})
+        res.json({ "message": "New user created successfully" })
     })
 router.route('/login')
     .post(async (req, res) => {
@@ -34,8 +36,8 @@ router.route('/login')
             })
 
             console.log(userValid);
-            if (userValid == null) return res.status(404).json({"message": "successfully login"})
-            res.json({"message": "successfully login"})
+            if (!userValid) return res.status(404).json({ "message": "Not found the user login" })
+            else res.json({ "message": "successfully login" })
         } catch (err) {
             console.log(err.message);
         }

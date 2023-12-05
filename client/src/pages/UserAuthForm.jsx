@@ -11,27 +11,71 @@ const UserAuthForm = ({ pageUrl }) => {
   console.log(data);
 
   // form submission and data is getted.
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const form = new FormData(document.getElementById("form-submit"));
+  //   for (let [key, value] of form) {
+  //     setData((prev) => ({ ...prev, [key]: value }));
+  //   }
+
+  //   if (pageUrl == "login") {
+  //     console.log("login");
+  //     await fetchData("http://localhost:3000/login");
+  //   } else {
+  //     console.log("logout");
+  //     await fetchData("http://localhost:3000/signup");
+  //   }
+  //   // setData({})
+
+  //   // pageUrl == "login" ? navigate("/") : navigate("/login");
+  // };
+  // console.log(data);
+
+  // const fetchData = async (url) => {
+  //   console.log(data);
+  //   try {
+  //     const response = await fetch(url, {
+  //       method: "POST", // or 'PUT'
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+  //     const result = await response.json();
+  //     console.log("Success:", result);
+  //     setData({});
+  //   } catch (error) {
+  //     console.error("Error:", error.message);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = new FormData(document.getElementById("form-submit"));
+    const formData = {};
 
     for (let [key, value] of form) {
-      console.log(key, value);
-      setData((prev) => ({ ...prev, [key]: value }));
+      formData[key] = value;
     }
+    setData(formData)
 
-    await fetchData("http://localhost:3000/signup");
-    setData({})
+    
 
-    pageUrl == "login" ? navigate("/") : navigate("/login");
+    if (pageUrl === "login") {
+      console.log("login");
+      await fetchData("http://localhost:3000/login");
+    } else {
+      console.log("logout");
+      await fetchData("http://localhost:3000/signup");
+    }
   };
-  console.log(data);
 
   const fetchData = async (url) => {
     try {
-      const response = await fetch("http://localhost:3000/signup", {
-        method: "POST", // or 'PUT'
+      const response = await fetch(url, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -39,10 +83,14 @@ const UserAuthForm = ({ pageUrl }) => {
       });
       const result = await response.json();
       console.log("Success:", result);
+
+      // Set data to empty object only after the fetch request is completed
+      setData({});
     } catch (error) {
       console.error("Error:", error.message);
     }
   };
+
   return (
     <div className="flex justify-center items-center h-[calc(100vh-60px)] bg-violetlight">
       <div className="bg-slate-100/70 p-16 rounded-lg flex justify-center flex-col items-center gap-3 h-[450px] w-[400px]">
