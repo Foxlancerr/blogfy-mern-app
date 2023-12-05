@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { InputBox } from "../components";
 import { Link, useNavigate } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -7,21 +7,42 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 
 const UserAuthForm = ({ pageUrl }) => {
   const navigate = useNavigate();
+  let [data, setData] = useState({});
+  console.log(data);
 
   // form submission and data is getted.
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = new FormData(document.getElementById("form-submit"));
-    let formDataGetted = [];
+
     for (let [key, value] of form) {
-      formDataGetted.push({ [key]: value });
+      console.log(key, value);
+      setData((prev) => ({ ...prev, [key]: value }));
     }
-    console.log(formDataGetted);
+
+    await fetchData("http://localhost:3000/signup");
+    setData({})
 
     pageUrl == "login" ? navigate("/") : navigate("/login");
   };
+  console.log(data);
 
+  const fetchData = async (url) => {
+    try {
+      const response = await fetch("http://localhost:3000/signup", {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      console.log("Success:", result);
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  };
   return (
     <div className="flex justify-center items-center h-[calc(100vh-60px)] bg-violetlight">
       <div className="bg-slate-100/70 p-16 rounded-lg flex justify-center flex-col items-center gap-3 h-[450px] w-[400px]">
