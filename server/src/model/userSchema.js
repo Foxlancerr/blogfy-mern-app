@@ -1,17 +1,17 @@
-const mongoose = require('mongoose')
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        // required: true
+        require:[true,"The username is required"]
     },
     email: {
         type: String,
-        // required: true
+        require:[true,"The email is required"]
     },
     password: {
         type: String,
-        // required: true
+        require:[true,"The password is required"]
     }
 })
 

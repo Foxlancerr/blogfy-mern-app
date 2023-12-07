@@ -1,21 +1,18 @@
+import dotenv from "dotenv"
+import connectDB from "./src/db/index.js"
+import {app} from './app.js'
 
-const cors = require('cors');
-const express = require('express');
-const mongoose = require('mongoose');
-const router = require('./routes/userRouter.js')
-const app = express();
-
-//mongoDB connection
-require('./model/ConnectDB.js')();
-
-//middleware which read the body data
-app.use(express.json());
-app.use(cors())
+dotenv.config({
+    path: './.env'
+})
 
 
-//middleware which can handle routes
-app.use('/', router)
-
-app.listen(3000, () => {
-    console.log('listening on post 3000');
+connectDB()
+.then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
+    })
+})
+.catch((err) => {
+    console.log("MONGO db connection failed !!! ", err);
 })
