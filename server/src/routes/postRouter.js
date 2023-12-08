@@ -13,7 +13,7 @@ const middleware = upload.fields([
 postRouter.post('/post', middleware, async (req, res) => {
     const { title } = req.body;
     const files = req.files;
-    const postCreated = await Post.create({ title })
+    const postCreated = await Post.create({ title, })
     res.send(files)
 })
 
