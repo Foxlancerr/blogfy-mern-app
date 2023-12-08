@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import { generateAccessToken, verifyAccessToken } from "../utils/accessToken.js";
-
+//https://mysql.tutorials24x7.com/blog/guide-to-design-a-database-for-blog-management-in-mysql
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -20,8 +20,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "The password is required"],
         trim: true,
+    },
+    profile: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'profiles',
     }
-})
+
+}, { timestamps: true })
 
 userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) return next()
