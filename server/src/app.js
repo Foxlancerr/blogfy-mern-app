@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import userRouter from "./routes/userRouter.js"
 import profileRouter from "./routes/profileRouter.js"
+import postRouter from "./routes/postRouter.js"
 // import cookieParser from "cookie-parser"
 
 const app = express()
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 //routes declaration
 app.use("/", userRouter)
 app.use("/", profileRouter)
+app.use("/", postRouter)
 
 // http://localhost:8000/api/v1/users/register
 
