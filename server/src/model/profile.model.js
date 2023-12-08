@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const profileSchema = new mongoose.Schema({
     intro: {
         type: String,
-        required: true
+        required: [true, "write something about to yourself"]
     },
     address: {
         type: String,
