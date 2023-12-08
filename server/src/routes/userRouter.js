@@ -1,49 +1,61 @@
-const express = require('express');
-const User = require("../model/userSchema")
+import express from "express"
+import User from "../model/userSchema.js"
 
 const router = express.Router();
 
-router.route('/')
-    .get(async (req, res) => {
-        res.send("hello world");
-    })
-
 router.route('/signup')
     .post(async (req, res) => {
-        console.log(req.body);
-        console.log(req.body);
-        console.log(req.body);
+        const { username, password, email } = req.body;
 
-        try {
-            User.create({
-                username: req.body.username,
-                email: req.body.email,
-                password: req.body.password,
-            })
-        } catch (err) {
-            console.log(err.message);
-        }
+        const userOne = await User.create({ username, password, email });
+        console.log(userOne)
 
-        res.json({ "message": "New user created successfully" })
-    })
-router.route('/login')
-    .post(async (req, res) => {
-        console.log(req.body);
-
-        try {
-            const userValid = await User.findOne({
-                email: req.body.email,
-            })
-
-            console.log(userValid);
-            if (!userValid) return res.status(404).json({ "message": "Not found the user login" })
-            else res.json({ "message": "successfully login" })
-        } catch (err) {
-            console.log(err.message);
-        }
-
+        // if ([username, password, email].some(val => val?.trim() === undefined)) {
+        //     res.send("no data is entered");
+        // }
 
     })
 
 
-module.exports = router;
+
+
+
+// router.route('/signup').post(async (req, res) => {
+//     console.log(req.body);
+//     console.log(req.body);
+//     console.log(req.body);
+
+//     try {
+//         User.create({
+//             username: req.body.username,
+//             email: req.body.email,
+//             password: req.body.password,
+//         })
+//     } catch (err) {
+//         console.log(err.message);
+//     }
+
+//     res.json({ "message": "New user created successfully" })
+// })
+
+
+// router.route('/login').post(async (req, res) => {
+//     console.log(req.body);
+
+//     try {
+//         const userValid = await User.findOne({
+//             email: req.body.email,
+//         })
+
+//         console.log(userValid);
+//         if (!userValid) return res.status(404).json({ "message": "Not found the user login" })
+//         else res.json({ "message": "successfully login" })
+//     } catch (err) {
+//         console.log(err.message);
+//     }
+
+
+// })
+
+
+export default router;

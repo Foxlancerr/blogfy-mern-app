@@ -1,5 +1,6 @@
 import express from "express"
 import cors from "cors"
+import userRouter from "./src/routes/userRouter.js"
 // import cookieParser from "cookie-parser"
 
 const app = express()
@@ -21,7 +22,7 @@ app.use(express.urlencoded({extended: true, limit: "16kb"}))
 
 
 //routes declaration
-// app.use("/api/v1/users", userRouter)
+app.use("/", userRouter)
 
 // http://localhost:8000/api/v1/users/register
 
