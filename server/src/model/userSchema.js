@@ -1,24 +1,37 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
+import { generateAccessToken, verifyAccessToken } from "../utils/accessToken.js";
+
 
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        require:[true,"The username is required"]
+        required: [true, "The username is required"],
+        unique: true,
+        trim: true,
+        index: true,
     },
     email: {
         type: String,
-        require:[true,"The email is required"]
+        required: [true, "The email is required"],
+        trim: true,
     },
     password: {
         type: String,
-        require:[true,"The password is required"]
+        required: [true, "The password is required"],
+        trim: true,
     }
 })
 
-userSchema.pre("save", async function (){
-    await bcrypt.hash(this.password,10)
+userSchema.pre("save", async function (next) {
+    if (!this.isModified("password")) return next()
+    this.password = await bcrypt.hash(this.password, 10)
+    next()
 })
+
+userSchema.methods.isPasswordCorrect = async function (password) {
+    return await bcrypt.compare(password, this.password)
+}
 
 const User = mongoose.model('user', userSchema);
 
