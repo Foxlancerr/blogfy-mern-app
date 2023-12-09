@@ -1,8 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
-const EachBlog = ({ blogData }) => {
-  console.log(blogData);
-  let { title, tagline, keywords, image, contents } = blogData;
+const BlogDetails = ({ blogData }) => {
+  const { id } = useParams();
+  let { title, tagline, keywords, image, contents } = blogData[id];
 
   return (
     <div className="px-[100px] flex flex-col gap-6">
@@ -36,7 +37,9 @@ const EachBlog = ({ blogData }) => {
             {content.paragraphs.map((para, paraIndex) => (
               <p
                 className={`mb-2 ${
-                  contentIndex === 0 && paraIndex === 0 ? "text-4xl font-medium bg-red-200" : "text-[20px]"
+                  contentIndex === 0 && paraIndex === 0
+                    ? "text-4xl font-medium bg-red-200"
+                    : "text-[20px]"
                 }`}
                 key={paraIndex}
               >
@@ -50,4 +53,4 @@ const EachBlog = ({ blogData }) => {
   );
 };
 
-export default EachBlog;
+export default BlogDetails;

@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home, UserAuthForm } from "./pages";
+import { Home, UserAuthForm,BlogDetails } from "./pages";
 import { Navbar } from "./components";
+import blogData  from "./constants";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
             path="/login"
             element={<UserAuthForm pageUrl="login"></UserAuthForm>}
           ></Route>
+          <Route path="/blog/:id" element={<BlogDetails blogData = {blogData}/>}></Route>
           <Route
             path="/signup"
             element={<UserAuthForm pageUrl="signup"></UserAuthForm>}

@@ -7,7 +7,7 @@ import image6 from "./assets/img6.jpg";
 
 
 
-export const blogData2 = [
+let blogData = [
 
     {
         "key": 0,
@@ -311,3 +311,5 @@ export const blogData2 = [
         ]
     },
 ]
+
+export default blogData;
