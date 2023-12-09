@@ -10,6 +10,7 @@ import image6 from "./assets/img6.jpg";
 export const blogData2 = [
 
     {
+        "key": 0,
         "keywords": ["nature", "exploration", "adventure"],
         "image": image1,
         "title": "Discovering the Enchanting Beauty of Nature",
@@ -59,6 +60,7 @@ export const blogData2 = [
         ]
     },
     {
+        "key": 1,
         "keywords": ["nature", "exploration", "adventure"],
         "image": image2,
         "title": "Discovering the Enchanting Beauty of Nature",
@@ -108,6 +110,7 @@ export const blogData2 = [
         ]
     },
     {
+        "key": 2,
         "keywords": ["nature", "exploration", "adventure"],
         "image": image3,
         "title": "Discovering the Enchanting Beauty of Nature",
@@ -157,6 +160,7 @@ export const blogData2 = [
         ]
     },
     {
+        "key": 3,
         "keywords": ["nature", "exploration", "adventure"],
         "image": image4,
         "title": "Discovering the Enchanting Beauty of Nature",
@@ -206,6 +210,8 @@ export const blogData2 = [
         ]
     },
     {
+        "key": 4,
+
         "keywords": ["nature", "exploration", "adventure"],
         "image": image5,
         "title": "Discovering the Enchanting Beauty of Nature",
@@ -255,6 +261,7 @@ export const blogData2 = [
         ]
     },
     {
+        "key": 5,
         "keywords": ["nature", "exploration", "adventure"],
         "image": image6,
         "title": "Discovering the Enchanting Beauty of Nature",

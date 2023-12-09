@@ -24,17 +24,22 @@ const EachBlog = ({ blogData }) => {
           className="overflow-hidden w-[100%] h-[100%] object-cover"
         />
       </div>
-      <div className="w-[80%] mx-auto flex gap-4 flex-col">
-        {contents.map((content, index) => (
-          <div className="" key={index}>
+      <div className="w-[80%] mx-auto flex gap-4 flex-col mb-[15vh]">
+        {contents.map((content, contentIndex) => (
+          <div className="" key={contentIndex}>
             {content.heading && (
               <h1 className="text-4xl my-5 text-black/70 font-inter font-medium ">
                 {content.heading}
               </h1>
             )}
             {/* {content.paragraphs[0]} */}
-            {content.paragraphs.map((para, index) => (
-              <p className="text-[18px] text-slate-500" key={index}>
+            {content.paragraphs.map((para, paraIndex) => (
+              <p
+                className={`mb-2 ${
+                  contentIndex === 0 && paraIndex === 0 ? "text-4xl font-medium bg-red-200" : "text-[20px]"
+                }`}
+                key={paraIndex}
+              >
                 {para}
               </p>
             ))}
