@@ -1,12 +1,14 @@
-import React from 'react';
-
+import React from "react";
+import EachBlog from "./EachBlog";
+import {blogData2} from "../constants";
 
 const Home = () => {
+  // console.log(blogData)
   return (
     <div>
-      <h1>Home</h1>
+      <EachBlog blogData={blogData2[2]}></EachBlog>
     </div>
   );
-}
+};
 
 export default Home;
