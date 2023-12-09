@@ -4,7 +4,7 @@ import blogData from "../constants";
 
 const WriteBlog = () => {
   return (
-    <div className="px-[100px] flex mt-[5rem] gap-10">
+    <div className="md:px-[100px] px-[20px] flex mt-[5rem] gap-10">
       <div className="w-[70%]">
         <h1 className="text-7xl w-[90%] leading-[80px] font-inter font-medium capitalize mb-10">
           write your <span className="bg-red-300">Blogs</span>{" "}
