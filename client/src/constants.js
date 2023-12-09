@@ -13,34 +13,34 @@ let blogData = [
         "key": 0,
         "keywords": ["nature", "exploration", "adventure"],
         "image": image1,
-        "title": "Discovering the Enchanting Beauty of Nature",
+        "title": "WEBSITE ESSENTIALS Best portfolio websites to fuel your inspiration",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
             {
-                // "heading": "Introduction",
                 "paragraphs": [
-                    "In the tapestry of our existence, the marvels of nature stand as an awe-inspiring testament to the beauty that surrounds us. As we traverse the landscape of our planet.",
+                    "Good design is innovative,” stated the highly influential industrial designer Dieter Rams in his list of ten principles.",
                 ]
             },
             {
                 "heading": "Diversity of Flora and Fauna",
                 "paragraphs": [
-                    "Our first destination is the heart of biodiversity, where we encounter a mesmerizing array of plant and animal species. Nature, in its infinite wisdom, has woven a delicate tapestry of life, with each organism playing a vital role in the intricate web of ecosystems.",
-                    "As we navigate through lush landscapes and verdant meadows, the symphony of bird songs and the rustling of leaves create a harmonious melody. The diversity of life on Earth is not just a spectacle; it's a testament to the resilience and interconnectedness of all living things."
+                    "On top of pinpointing what distinguishes you from other creatives and how you can express this in your design, a great place to start is to search for inspiration by looking at the works of others. Before creating your own portfolio website (see best portfolio website builders), check out this selection of 18 of the best portfolio websites—all made with the website builder Wix:",
+                    "Graphic designer and visual communicator Christina Vanessa clearly has an eye for aesthetics. The first page we reach on this graphic design portfolio example is a simple expression of her creative work and personality. There’s a fullscreen looped video showcasing her best pieces, with her name and disciplines written above."
                 ]
             },
             {
                 "heading": "Chasing Waterfalls",
                 "paragraphs": [
                     "Our journey takes a thrilling turn as we chase the allure of cascading waterfalls. From the thunderous roar of mighty falls to the hidden gems tucked away in secluded valleys, each waterfall tells a unique story.",
-                    "Feel the mist on your face as we stand in awe of nature's hydraulic masterpieces. The dance of water, gravity, and rock creates a spectacle that transcends mere observation; it's an immersive experience that leaves an indelible mark on the soul."
+                    "Feel the mist on your face as we stand in awe of nature's hydraulic masterpieces. The dance of water, gravity, and rock creates a spectacle that transcends mere observation; it's an immersive experience that leaves an indelible mark on the soul.",
+                    "Specializing in branding and UI/UX design, Sophie Brittain’s UX portfolio website example certainly demonstrates her skills in both areas. She’s crafted a well-defined visual language when planning  how to create a website as her career portfolio, made up of three colors, geometric shapes, vector line icons and plenty of white space."
                 ]
             },
             {
                 "heading": "The Call of the Mountains",
                 "paragraphs": [
-                    "Venturing into the embrace of towering mountains, we are greeted by snow-capped peaks and alpine meadows. The mountains, with their stoic grandeur, beckon adventure enthusiasts and contemplative souls alike.",
-                    "From conquering challenging summits to meditative strolls along mountain trails, we explore the profound impact these majestic landforms have on our spirits. The mountains, with their timeless appeal, offer a sanctuary for seekers of both adrenaline and introspection."
+                    "Specializing in branding and UI/UX design, Sophie Brittain’s UX portfolio website example certainly demonstrates her skills in both areas. She’s crafted a well-defined visual language when planning  how to create a website as her career portfolio, made up of three colors, geometric shapes, vector line icons and plenty of white space.",
+                    "Specializing in branding and UI/UX design, Sophie Brittain’s UX portfolio website example certainly demonstrates her skills in both areas. She’s crafted a well-defined visual language when planning  how to create a website as her career portfolio, made up of three colors, geometric shapes, vector line icons and plenty of white space."
                 ]
             },
             {
@@ -61,26 +61,25 @@ let blogData = [
     },
     {
         "key": 1,
-        "keywords": ["nature", "exploration", "adventure"],
+        "keywords": ["technology", "innovation", "digital"],
         "image": image2,
-        "title": "Discovering the Enchanting Beauty of Nature",
-        "tagline": "Embark on a Journey Through the Wonders of the Natural World",
+        "title": "TECH WONDERS: Exploring Cutting-edge Innovations",
+        "tagline": "Embark on a Journey Through the Marvels of Technology",
         "contents": [
             {
-                // "heading": "Introduction",
                 "paragraphs": [
-                    "In the tapestry of our existence, the marvels of nature stand as an awe-inspiring testament to the beauty that surrounds us. As we traverse the landscape of our planet.",
+                    "As we navigate through lush landscapes and verdant meadows, the symphony of bird songs and the rustling of leaves create a harmonious melody.",
                 ]
             },
             {
-                "heading": "Diversity of Flora and Fauna",
+                "heading": "Digital Revolution",
                 "paragraphs": [
                     "Our first destination is the heart of biodiversity, where we encounter a mesmerizing array of plant and animal species. Nature, in its infinite wisdom, has woven a delicate tapestry of life, with each organism playing a vital role in the intricate web of ecosystems.",
                     "As we navigate through lush landscapes and verdant meadows, the symphony of bird songs and the rustling of leaves create a harmonious melody. The diversity of life on Earth is not just a spectacle; it's a testament to the resilience and interconnectedness of all living things."
                 ]
             },
             {
-                "heading": "Chasing Waterfalls",
+                "heading": "Artificial Intelligence Marvels",
                 "paragraphs": [
                     "Our journey takes a thrilling turn as we chase the allure of cascading waterfalls. From the thunderous roar of mighty falls to the hidden gems tucked away in secluded valleys, each waterfall tells a unique story.",
                     "Feel the mist on your face as we stand in awe of nature's hydraulic masterpieces. The dance of water, gravity, and rock creates a spectacle that transcends mere observation; it's an immersive experience that leaves an indelible mark on the soul."
@@ -264,31 +263,31 @@ let blogData = [
         "key": 5,
         "keywords": ["nature", "exploration", "adventure"],
         "image": image6,
-        "title": "Discovering the Enchanting Beauty of Nature",
+        "title": "How to easily start a blog and monetize it in 2024",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
             {
                 // "heading": "Introduction",
                 "paragraphs": [
-                    "In the tapestry of our existence, the marvels of nature stand as an awe-inspiring testament to the beauty that surrounds us. As we traverse the landscape of our planet.",
+                    "If you’re wondering how to create a blog, you’ve come to the right place. As a blogger myself, I can tell you it’s a rewarding way to hone your writing skills, explore new ideas.",
                 ]
             },
             {
-                "heading": "Diversity of Flora and Fauna",
+                "heading": "How to start a blog",
                 "paragraphs": [
                     "Our first destination is the heart of biodiversity, where we encounter a mesmerizing array of plant and animal species. Nature, in its infinite wisdom, has woven a delicate tapestry of life, with each organism playing a vital role in the intricate web of ecosystems.",
                     "As we navigate through lush landscapes and verdant meadows, the symphony of bird songs and the rustling of leaves create a harmonious melody. The diversity of life on Earth is not just a spectacle; it's a testament to the resilience and interconnectedness of all living things."
                 ]
             },
             {
-                "heading": "Chasing Waterfalls",
+                "heading": "Reasons to start a blog",
                 "paragraphs": [
-                    "Our journey takes a thrilling turn as we chase the allure of cascading waterfalls. From the thunderous roar of mighty falls to the hidden gems tucked away in secluded valleys, each waterfall tells a unique story.",
+                    "Thanks to the internet, we no longer need to live in the same city, state or even country to feel connected to others. A blog, as part of a wider blogosphere community, creates a space to share your story, ideas and start conversations with people all over the world with mutual interests. A blog typically has a comments section where your readers can speak with you directly, allowing you to engage in conversation and build relationships.",
                     "Feel the mist on your face as we stand in awe of nature's hydraulic masterpieces. The dance of water, gravity, and rock creates a spectacle that transcends mere observation; it's an immersive experience that leaves an indelible mark on the soul."
                 ]
             },
             {
-                "heading": "The Call of the Mountains",
+                "heading": "Build an online community",
                 "paragraphs": [
                     "Venturing into the embrace of towering mountains, we are greeted by snow-capped peaks and alpine meadows. The mountains, with their stoic grandeur, beckon adventure enthusiasts and contemplative souls alike.",
                     "From conquering challenging summits to meditative strolls along mountain trails, we explore the profound impact these majestic landforms have on our spirits. The mountains, with their timeless appeal, offer a sanctuary for seekers of both adrenaline and introspection."

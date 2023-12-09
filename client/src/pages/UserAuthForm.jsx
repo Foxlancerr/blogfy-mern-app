@@ -10,46 +10,6 @@ const UserAuthForm = ({ pageUrl }) => {
   let [data, setData] = useState({});
   console.log(data);
 
-  // form submission and data is getted.
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   const form = new FormData(document.getElementById("form-submit"));
-  //   for (let [key, value] of form) {
-  //     setData((prev) => ({ ...prev, [key]: value }));
-  //   }
-
-  //   if (pageUrl == "login") {
-  //     console.log("login");
-  //     await fetchData("http://localhost:3000/login");
-  //   } else {
-  //     console.log("logout");
-  //     await fetchData("http://localhost:3000/signup");
-  //   }
-  //   // setData({})
-
-  //   // pageUrl == "login" ? navigate("/") : navigate("/login");
-  // };
-  // console.log(data);
-
-  // const fetchData = async (url) => {
-  //   console.log(data);
-  //   try {
-  //     const response = await fetch(url, {
-  //       method: "POST", // or 'PUT'
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(data),
-  //     });
-  //     const result = await response.json();
-  //     console.log("Success:", result);
-  //     setData({});
-  //   } catch (error) {
-  //     console.error("Error:", error.message);
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -59,9 +19,7 @@ const UserAuthForm = ({ pageUrl }) => {
     for (let [key, value] of form) {
       formData[key] = value;
     }
-    setData(formData)
-
-    
+    setData(formData);
 
     if (pageUrl === "login") {
       console.log("login");
@@ -92,14 +50,15 @@ const UserAuthForm = ({ pageUrl }) => {
   };
 
   return (
-    <div className="flex justify-center items-center h-[calc(100vh-60px)] bg-violetlight">
-      <div className="bg-slate-100/70 p-16 rounded-lg flex justify-center flex-col items-center gap-3 h-[450px] w-[400px]">
-        <h1 className="text-3xl text-center capitalize sm:text-3xl font-inter text-violetdark font-bold mb-[30px]">
+    <div className="flex justify-center items-center h-[calc(100vh-60px)]">
+      <div className="bg-slate-200/70 p-16 rounded-lg flex justify-center flex-col items-center gap-3 h-[450px] w-[450px]">
+        <h1 className="text-3xl text-center capitalize sm:text-3xl font-inter text-red-400 font-bold mb-[30px]">
           {pageUrl == "login" ? "welcome back" : "continue for signup"}
         </h1>
         <form
+
           id="form-submit"
-          className="flex flex-col items-center justify-center max-[400px] gap-3"
+          className="flex flex-col items-center justify-center w-[100%] gap-3"
         >
           {pageUrl !== "login" ? (
             <InputBox
