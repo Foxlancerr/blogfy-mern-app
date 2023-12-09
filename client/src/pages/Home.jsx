@@ -6,13 +6,13 @@ import { Footer, SingleBlog } from "../components";
 const Home = () => {
   return (
     <>
-      <div className="px-[100px] flex flex-col gap-6">
+      <div className="md:px-[100px] px-[20px] flex flex-col gap-6">
         <div className="mt-[10rem]">
-          <h1 className="text-7xl w-[90%] leading-[80px] font-inter font-medium">
+          <h1 className="md:text-7xl text-4xl w-[90%] font-inter font-medium">
             Uncover <span className="bg-red-300">fresh prespective, ideas</span>{" "}
             and knowledge through the power of blogs.
           </h1>
-          <p className="text-2xl w-[70%] mt-10 text-black/60">
+          <p className="text-2xl md:text-xl w-[70%] mt-10 text-black/60">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
             voluptatem enim officiis cum id rerum ratione corrupti rem! Dicta,
             aspernatur.
@@ -25,7 +25,7 @@ const Home = () => {
           <h1 className="text-4xl mb-3">Top Articles</h1>
           <hr className="border-red-300 border-2" />
         </div>
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
           {blogData.map((blog) => (
             <SingleBlog key={blog.key} blog={blog}></SingleBlog>
           ))}
