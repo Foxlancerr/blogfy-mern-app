@@ -7,7 +7,6 @@ import logo from "../assets/logo.png";
 const Navbar = () => {
   const [toggleNavigation, setToggleNavigation] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
-  console.log(toggleNavigation);
   return (
     <>
       <nav className="flex justify-between items-center bg-slate-100/60 py-4 md:px-[100px] px-[20px] relative w-[100%]">

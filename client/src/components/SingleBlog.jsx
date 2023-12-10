@@ -13,8 +13,11 @@ const SingleBlog = ({ blog }) => {
         />
       </div>
       <div className="mt-5">
-        {blog.keywords.map((keyword) => (
-          <span className="text-[16px] mr-2 bg-slate-200 px-2 py-1 font-medium uppercase">
+        {blog.keywords.map((keyword, index) => (
+          <span
+            key={index}
+            className="text-[16px] mr-2 bg-slate-200 px-2 py-1 font-medium uppercase"
+          >
             {keyword}
           </span>
         ))}
