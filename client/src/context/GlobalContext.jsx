@@ -1,4 +1,6 @@
 import React, { createContext, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const GlobalContext = createContext();
 
@@ -22,19 +24,25 @@ const GlobalContextProvider = ({ children }) => {
     const values = Object.values(writeData);
     // values.splice(2, 1);
     if (values.some((val) => val === "")) {
-      alert("pl fill all the values")
+      toast.error("Pl fill all the form !", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
       return null;
     }
 
     setFormDataSaved(writeData);
     console.log(writeData);
   };
-  console.log(formDataSaved);
+
   return (
     <GlobalContext.Provider
       value={{ formHandler, setFormDataSaved, formDataSaved, fetchData }}
     >
-      {children}
+      <>
+        <ToastContainer></ToastContainer>
+        {children}
+      </>
     </GlobalContext.Provider>
   );
 };
