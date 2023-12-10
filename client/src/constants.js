@@ -12,7 +12,7 @@ let blogData = [
     {
         "key": 0,
         "keywords": ["nature", "exploration", "adventure"],
-        "image": image1,
+        "coverImage": image1,
         "title": "WEBSITE ESSENTIALS Best portfolio websites to fuel your inspiration",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
@@ -62,7 +62,7 @@ let blogData = [
     {
         "key": 1,
         "keywords": ["technology", "innovation", "digital"],
-        "image": image2,
+        "coverImage": image2,
         "title": "TECH WONDERS: Exploring Cutting-edge Innovations",
         "tagline": "Embark on a Journey Through the Marvels of Technology",
         "contents": [
@@ -111,7 +111,7 @@ let blogData = [
     {
         "key": 2,
         "keywords": ["nature", "exploration", "adventure"],
-        "image": image3,
+        "coverImage": image3,
         "title": "Discovering the Enchanting Beauty of Nature",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
@@ -161,7 +161,7 @@ let blogData = [
     {
         "key": 3,
         "keywords": ["nature", "exploration", "adventure"],
-        "image": image4,
+        "coverImage": image4,
         "title": "Discovering the Enchanting Beauty of Nature",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
@@ -212,7 +212,7 @@ let blogData = [
         "key": 4,
 
         "keywords": ["nature", "exploration", "adventure"],
-        "image": image5,
+        "coverImage": image5,
         "title": "Discovering the Enchanting Beauty of Nature",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
@@ -262,7 +262,7 @@ let blogData = [
     {
         "key": 5,
         "keywords": ["nature", "exploration", "adventure"],
-        "image": image6,
+        "coverImage": image6,
         "title": "How to easily start a blog and monetize it in 2024",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [

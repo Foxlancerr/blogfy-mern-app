@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="flex border-t-slate-300 border-t-2 text-xl py-6 md:px-[100px] px-[30px] mt-[10rem] justify-between gap-3">
+    <div className="flex border-t-slate-300 border-t-2 text-xl py-6 md:px-[100px] px-[30px] mt-[10rem] justify-between gap-3 flex-wrap">
       <div className="flex md:gap-10 gap-2 items-center md:text-3xl text-1xl">
         <AiFillFacebook className="cursor-pointer"></AiFillFacebook>
         <FaGithub className="cursor-pointer"></FaGithub>

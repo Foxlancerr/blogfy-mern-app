@@ -4,7 +4,7 @@ import {Footer} from "../components/index"
 
 const BlogDetails = ({ blogData }) => {
   const { id } = useParams();
-  let { title, tagline, keywords, image, contents } = blogData[id];
+  let { title, tagline, keywords, coverImage, contents } = blogData[id];
 
   return (
     <>
@@ -24,7 +24,7 @@ const BlogDetails = ({ blogData }) => {
         </div>
         <div className=" bg-red-300 md:h-[550px] h-[250px] md:w-[80%] w-[90%] mx-auto">
           <img
-            src={image}
+            src={coverImage}
             alt="img-tag"
             className="overflow-hidden w-[100%] h-[100%] object-cover"
           />

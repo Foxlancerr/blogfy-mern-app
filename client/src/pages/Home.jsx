@@ -1,9 +1,9 @@
-import React from "react";
-import EachBlog from "./BlogDetails";
-import blogData from "../constants";
+import React, { useContext } from "react";
 import { Footer, SingleBlog } from "../components";
+import { GlobalContext } from "../context/GlobalContext";
 
 const Home = () => {
+  const { blogData } = useContext(GlobalContext);
   return (
     <>
       <div className="md:px-[100px] px-[20px] flex flex-col gap-6">

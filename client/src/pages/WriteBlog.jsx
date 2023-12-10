@@ -45,6 +45,21 @@ const WriteBlog = () => {
             />
           </div>
           <div className="flex gap-4 md:flex-row md:items-center md:justify-between mb-4 flex-col">
+            <label
+              htmlFor="keyword"
+              className="mr-2 md:text-3xl text-2xl capitalize "
+            >
+              keyword
+            </label>
+            <input
+              type="text"
+              id="keyword"
+              name="keyword"
+              placeholder="Write Keywords (comma-separated):"
+              className="border-none outline-none md:text-2xl text-1xl placeholder:capitalize bg-slate-100 px-3 py-4 md:w-[80%] w-full "
+            />
+          </div>
+          <div className="flex gap-4 md:flex-row md:items-center md:justify-between mb-4 flex-col">
             <label htmlFor="file" className="mr-2 text-3xl capitalize ">
               File
             </label>

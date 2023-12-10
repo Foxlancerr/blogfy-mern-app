@@ -1,5 +1,4 @@
 import React from "react";
-import image1 from "../assets/img1.jpg";
 import { Link } from "react-router-dom";
 
 const SingleBlog = ({ blog }) => {
@@ -7,7 +6,7 @@ const SingleBlog = ({ blog }) => {
     <Link to={`/blog/${blog.key}`} className="flex flex-col">
       <div className=" bg-red-300 h-[250px]">
         <img
-          src={blog.image}
+          src={blog.coverImage}
           alt="image1"
           className="object-cover w-[100%] h-[100%]"
         />
@@ -16,7 +15,7 @@ const SingleBlog = ({ blog }) => {
         {blog.keywords.map((keyword, index) => (
           <span
             key={index}
-            className="text-[16px] mr-2 bg-slate-200 px-2 py-1 font-medium uppercase"
+            className="text-[16px] mr-2 inline-block mb-2 bg-slate-200 px-2 py-1 font-medium uppercase"
           >
             {keyword}
           </span>
