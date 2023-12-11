@@ -1,7 +1,8 @@
 import Home from "./Home.jsx";
-import UserAuthForm from "./UserAuthForm.jsx";
+import RegisterForm from "./RegisterForm.jsx";
 import BlogDetails from "./BlogDetails.jsx";
 import WriteBlog from "./WriteBlog.jsx";
+import SignInUserForm from "./SignInUserForm.jsx";
 export {
-    Home, UserAuthForm,BlogDetails,WriteBlog
+    Home,BlogDetails,WriteBlog,RegisterForm,SignInUserForm
 }

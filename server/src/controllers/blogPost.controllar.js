@@ -32,21 +32,27 @@ export const writeBlogPostMethod = async (req, res) => {
             contents.push({ paragraphs: paragraph2 ? [paragraph2] : [], heading: heading2 });
         }
 
-        // Create the document to be saved in the database
-        const post = new PostBlog({
-            title,
-            tagline,
-            keywords: keywordCheck,
-            coverImage,
-            contents,
-            // author: req.user._id // Assuming you have authentication middleware storing user information in req.user
-        });
+        try {
 
-        // Save the document to the database
-        const savedPost = await post.save();
-        console.log(savedPost);
+            // Create the document to be saved in the database
+            const post = new PostBlog({
+                title,
+                tagline,
+                keywords: keywordCheck,
+                coverImage,
+                contents,
+                // author: req.user._id // Assuming you have authentication middleware storing user information in req.user
+            });
 
-        res.status(201).json(savedPost);
+            // Save the document to the database
+            const savedPost = await post.save();
+            console.log(savedPost);
+
+            res.status(201).json(savedPost);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+            return
+        }
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: error.message });

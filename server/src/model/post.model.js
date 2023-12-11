@@ -9,6 +9,10 @@ import mongoose from "mongoose";
 
 
 const postBlogSchema = new mongoose.Schema({
+    key: {
+        type: Number,
+        default: Date.now(),
+    },
     title: {
         type: String,
         required: [true, "the title is required"],

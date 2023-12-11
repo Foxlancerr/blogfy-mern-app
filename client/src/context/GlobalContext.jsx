@@ -18,7 +18,7 @@ const GlobalContextProvider = ({ children }) => {
    */
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/v1/blogs")
+    fetch("http://localhost:3000/api/v1/blogs/json")
       .then((res) => res.json())
       .then((result) => {
         setAllBlogsGetFromDB(result);
@@ -28,8 +28,6 @@ const GlobalContextProvider = ({ children }) => {
 
   let [formDataSaved, setFormDataSaved] = useState({});
   console.log(allBlogsGetFromDB);
-
-  console.log("formDataSaved ====>", formDataSaved);
 
   // sending Data into backend
   const sendFrontDataIntoDB = async (url, data) => {
@@ -43,11 +41,14 @@ const GlobalContextProvider = ({ children }) => {
         body: JSON.stringify(data),
       });
       const result = await response.json();
-      console.log("Success:", result);
 
       // Set data to empty object only after the fetch request is completed
       // setData({});
     } catch (error) {
+      toast.error(error.message, {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
       console.error("Error:", error.message);
     }
   };
@@ -115,7 +116,7 @@ const GlobalContextProvider = ({ children }) => {
 
     // toost pop up
     // const values = Object.values(writeData);
-    // // values.splice(2, 1);
+    // // // values.splice(2, 1);
     // if (values.some((val) => val === "")) {
     //   toast.error("Pl fill all the form !", {
     //     position: toast.POSITION.TOP_CENTER,
@@ -129,26 +130,9 @@ const GlobalContextProvider = ({ children }) => {
     // console.log(writeData);
 
     // based on condition we can set the data
-    // if (typeOfForm === "writeBlogForm") {
-    //   let {
-    //     title,
-    //     tagline,
-    //     keyword,
-    //     coverImage,
-    //     paragraph,
-    //     paragraph1,
-    //     paragraph2,
-    //     heading1,
-    //     heading2,
-    //   } = writeData;
-    //   setBlogPost((prev) =>
-    //     arrangeDataFromSavingInDB(title, tagline, keyword, coverImage, [
-    //       { paragraphs: [paragraph] },
-    //       { paragraphs: [paragraph1], heading: heading1 },
-    //       { heading: heading2, paragraphs: [paragraph2] },
-    //     ])
-    //   );
-    // }
+    if (typeOfForm === "writeBlogForm") {
+      
+    }
   };
 
   // useEffects to store data in session
