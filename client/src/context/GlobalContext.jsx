@@ -9,56 +9,101 @@ import {
   removeDataFromSession,
 } from "../utils/sessionStorage";
 
+// create contexts here...
 export const GlobalContext = createContext();
 
 const GlobalContextProvider = ({ children }) => {
   let [auth, setAuth] = useState(false);
   let [formDataSaved, setFormDataSaved] = useState({});
-  console.log(formDataSaved);
-  let [blogPost, setBlogPost] = useState({});
+  // console.log(formDataSaved);
 
-  // useEffect(() => {
-  //   arrangeDataFromSavingInDB();
-  //   console.log(blogPost);
-  // }, [blogPost]);
+  let [blogPost, setBlogPost] = useState({
+    title: "",
+    tagline: "",
+    coverImage: "",
+    keyword: [],
+    contents: [],
+  });
 
-  const arrangeDataFromSavingInDB = () => {
-    console.log(formDataSaved);
-    // let { title, tagline, keywords, coverImage, contents } = formDataSaved;
-    // console.log(title,tagline,keywords);
+  console.log("blogPost ====>", blogPost);
+  console.log("formDataSaved ====>", formDataSaved);
 
-    let keywordCheck;
+  // fetching data from the form
 
-    // if (!keywords?.includes(",")) {
-    //   keywordCheck = [keywords];
-    // } else {
-    //   // Split the string with a comma and trim each keyword
-    //   keywordCheck = keywords?.split(",").map((word) => word.trim());
-    //   console.log(keywordCheck);
-    // }
+  const fetchData = async (url, data) => {
+    console.log(data);
+    try {
+      const response = await fetch("http://localhost:3000/api/v1/" + url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      console.log("Success:", result);
 
-    // const blogFormat = {
-    //   key: Date.now(),
-    //   keywords: [...keywordCheck],
-    //   coverImage: "",
-    //   title: title,
-    //   tagline: tagline,
-    //   contents: [
-    //     {
-    //       heading: "",
-    //       paragraphs: [],
-    //     },
-    //   ],
-    // };
-    // setBlogPost(blogFormat);
+      // Set data to empty object only after the fetch request is completed
+      // setData({});
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
   };
-  // console.log(blogPost);
 
-  // feting data from the form
-  const fetchData = async (url) => {};
+  // testing
+  // const arrangeDataFromSavingInDB = (
+  //   title,
+  //   tagline,
+  //   keywords,
+  //   coverImage,
+  //   contents
+  // ) => {
+  //   let keywordCheck = [];
+  //   if (!keywords?.includes(",")) {
+  //     keywordCheck = [keywords];
+  //   } else {
+  //     // Split the string with a comma and trim each keyword
+  //     keywordCheck = keywords?.split(",").map((word) => word.trim());
+  //     // console.log(keywordCheck);
+  //   }
+
+  //   // Update the updatedData object with the new values
+  //   setBlogPost((prevBlogPost) => ({
+  //     // ...prevBlogPost,
+  //     title: title,
+  //     tagline: tagline,
+  //     keyword: keywordCheck,
+  //     coverImage: coverImage,
+  //     contents: contents.map((content) => {
+  //       const newContent = {};
+
+  //       // Check if heading exists and is a non-empty string
+  //       if (content.heading && typeof content.heading === "string") {
+  //         newContent.heading = content.heading;
+  //       } else {
+  //         newContent.heading = ""; // Default value if heading is not present or not a string
+  //       }
+
+  //       // Check if paragraphs is an array with at least one element
+  //       if (
+  //         Array.isArray(content.paragraphs) &&
+  //         content.paragraphs.length > 0
+  //       ) {
+  //         newContent.paragraphs = content.paragraphs;
+  //       } else {
+  //         newContent.paragraphs = []; // Default value if paragraphs is not an array or is empty
+  //       }
+
+  //       return newContent;
+  //     }),
+  //   }));
+
+  //   // Optional: Log the updated blogPost state to see the changes
+  //   console.log(blogPost);
+  // };
 
   // form submission
-  const formHandler = (event, formId) => {
+  const formHandler = (event, formId, typeOfForm) => {
     event.preventDefault();
     const form = new FormData(formId);
     const writeData = {};
@@ -66,6 +111,7 @@ const GlobalContextProvider = ({ children }) => {
       writeData[key] = value;
     }
 
+    // toost pop up
     // const values = Object.values(writeData);
     // // values.splice(2, 1);
     // if (values.some((val) => val === "")) {
@@ -76,9 +122,31 @@ const GlobalContextProvider = ({ children }) => {
     //   return null;
     // }
 
-    setFormDataSaved((prev) => writeData);
-    console.log(writeData);
-    arrangeDataFromSavingInDB();
+    setFormDataSaved(writeData);
+    fetchData("/blogs/create", writeData);
+    // console.log(writeData);
+
+    // based on condition we can set the data
+    // if (typeOfForm === "writeBlogForm") {
+    //   let {
+    //     title,
+    //     tagline,
+    //     keyword,
+    //     coverImage,
+    //     paragraph,
+    //     paragraph1,
+    //     paragraph2,
+    //     heading1,
+    //     heading2,
+    //   } = writeData;
+    //   setBlogPost((prev) =>
+    //     arrangeDataFromSavingInDB(title, tagline, keyword, coverImage, [
+    //       { paragraphs: [paragraph] },
+    //       { paragraphs: [paragraph1], heading: heading1 },
+    //       { heading: heading2, paragraphs: [paragraph2] },
+    //     ])
+    //   );
+    // }
   };
 
   // useEffects to store data in session

@@ -2,7 +2,7 @@ import express from "express"
 import cors from "cors"
 import userRouter from "./routes/userRouter.js"
 import profileRouter from "./routes/profileRouter.js"
-import postRouter from "./routes/postRouter.js"
+import postBlogRouter from "./routes/postBlogRouter.js"
 // import cookieParser from "cookie-parser"
 
 const app = express()
@@ -24,10 +24,14 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 
 
 //routes declaration
-app.use("/", userRouter)
-app.use("/", profileRouter)
-app.use("/", postRouter)
+app.use("/api/v1", userRouter)
+app.use("/api/v1", profileRouter)
+app.use("/api/v1", postBlogRouter)
 
 // http://localhost:8000/api/v1/users/register
 
 export { app }
+
+
+// post "/api/v1//blogs/create" blog creation
+// get "/api/v1//blogs" veiw all blogs

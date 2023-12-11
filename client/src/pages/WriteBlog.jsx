@@ -46,16 +46,16 @@ const WriteBlog = () => {
           </div>
           <div className="flex gap-4 md:flex-row md:items-center md:justify-between mb-4 flex-col">
             <label
-              htmlFor="keyword"
+              htmlFor="keywords"
               className="mr-2 md:text-3xl text-2xl capitalize "
             >
-              keyword
+              keywords
             </label>
             <input
               type="text"
-              id="keyword"
-              name="keyword"
-              placeholder="Write Keywords (comma-separated):"
+              id="keywords"
+              name="keywords"
+              placeholder="Write keywordss (comma-separated):"
               className="border-none outline-none md:text-2xl text-1xl placeholder:capitalize bg-slate-100 px-3 py-4 md:w-[80%] w-full "
             />
           </div>
@@ -70,16 +70,76 @@ const WriteBlog = () => {
               className="border-none outline-none md:text-2xl text-1xl bg-slate-100 px-3 py-3 md:py-4 md:w-[80%] w-full "
             />
           </div>
+
           <div className="flex gap-4 md:flex-row md:justify-between mb-4 flex-col">
-            <label htmlFor="contents" className="mr-2 text-3xl capitalize ">
-              Contents
+            <label htmlFor="mainparagraph" className="mr-2 text-3xl capitalize ">
+              main paragraph
             </label>
             <textarea
-              id="contents"
-              name="contents"
-              rows="10"
+              id="mainparagraph"
+              name="mainParagraph"
+              rows="5"
               cols="50"
-              placeholder="Type contents here ..."
+              placeholder="Type main paragraph here ..."
+              className="border-none outline-none md:text-2xl text-1xl placeholder:capitalize bg-slate-100 px-3 md:py-2 py-3 md:w-[80%] w-full "
+            ></textarea>
+          </div>
+
+          <div className="flex gap-4 md:flex-row md:items-center md:justify-between mb-4 flex-col">
+            <label
+              htmlFor="heading1"
+              className="mr-2 md:text-3xl text-2xl capitalize "
+            >
+              heading1
+            </label>
+            <input
+              type="text"
+              id="heading1"
+              name="heading1"
+              placeholder="heading1 here..."
+              className="border-none outline-none md:text-2xl text-1xl placeholder:capitalize bg-slate-100 px-3 py-4 md:w-[80%] w-full "
+            />
+          </div>
+
+          <div className="flex gap-4 md:flex-row md:justify-between mb-4 flex-col">
+            <label htmlFor="paragraph1" className="mr-2 text-3xl capitalize ">
+              paragraph1
+            </label>
+            <textarea
+              id="paragraph1"
+              name="paragraph1"
+              rows="5"
+              cols="50"
+              placeholder="Type paragraph2 here ..."
+              className="border-none outline-none md:text-2xl text-1xl placeholder:capitalize bg-slate-100 px-3 md:py-2 py-3 md:w-[80%] w-full "
+            ></textarea>
+          </div>
+          <div className="flex gap-4 md:flex-row md:items-center md:justify-between mb-4 flex-col">
+            <label
+              htmlFor="heading2"
+              className="mr-2 md:text-3xl text-2xl capitalize "
+            >
+              heading2
+            </label>
+            <input
+              type="text"
+              id="heading2"
+              name="heading2"
+              placeholder="heading2 here..."
+              className="border-none outline-none md:text-2xl text-1xl placeholder:capitalize bg-slate-100 px-3 py-4 md:w-[80%] w-full "
+            />
+          </div>
+
+          <div className="flex gap-4 md:flex-row md:justify-between mb-4 flex-col">
+            <label htmlFor="paragraph2" className="mr-2 text-3xl capitalize ">
+              paragraph2
+            </label>
+            <textarea
+              id="paragraph2"
+              name="paragraph2"
+              rows="5"
+              cols="50"
+              placeholder="Type paragraph2 here ..."
               className="border-none outline-none md:text-2xl text-1xl placeholder:capitalize bg-slate-100 px-3 md:py-2 py-3 md:w-[80%] w-full "
             ></textarea>
           </div>
@@ -88,7 +148,7 @@ const WriteBlog = () => {
             className="font-meduim mt-3 py-3 px-6 bg-red-400 hover:bg-red-400/90 rounded font-semibold w-full text-3xl"
             onClick={(e) => {
               const id = document.getElementById("writeBlog-form");
-              formHandler(e, id);
+              formHandler(e, id, "writeBlogForm");
             }}
           >
             Submit
