@@ -3,7 +3,7 @@ import { Footer, SingleBlog } from "../components";
 import { GlobalContext } from "../context/GlobalContext";
 
 const Home = () => {
-  const { blogData } = useContext(GlobalContext);
+  const { allBlogsGetFromDB } = useContext(GlobalContext);
   return (
     <>
       <div className="md:px-[100px] px-[20px] flex flex-col gap-6">
@@ -26,7 +26,7 @@ const Home = () => {
           <hr className="border-red-300 border-2" />
         </div>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
-          {blogData.map((blog) => (
+          {allBlogsGetFromDB.map((blog) => (
             <SingleBlog key={blog.key} blog={blog}></SingleBlog>
           ))}
         </div>

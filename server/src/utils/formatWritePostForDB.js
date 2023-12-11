@@ -21,7 +21,7 @@
 
 export const arrangeDataFromSavingInDB = (frontEndData) => {
 
-    console.log(frontEndData);
+    // console.log(frontEndData);
     const { title, tagline, keywords, coverImage, mainParagraph, paragraph1, paragraph2, heading1, heading2 } = frontEndData;
     let contents = [
         { paragraphs: [mainParagraph] },

@@ -1,34 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home, UserAuthForm, BlogDetails, WriteBlog } from "./pages";
 import { Navbar } from "./components";
-import blogData from "./constants";
-import GlobalContextProvider from "./context/GlobalContext.jsx";
+import { GlobalContext } from "./context/GlobalContext.jsx";
 
 const App = () => {
+  const { allBlogsGetFromDB } = useContext(GlobalContext);
   return (
     <>
-      <GlobalContextProvider>
-        <Routes>
-          <Route path="/" element={<Navbar></Navbar>}>
-            <Route index element={<Home />}></Route>
-            <Route
-              path="/login"
-              element={<UserAuthForm pageUrl="login"></UserAuthForm>}
-            ></Route>
-            <Route path="/write" element={<WriteBlog />}></Route>
-            <Route path="/blog" element={<Home></Home>}></Route>
-            <Route
-              path="/blog/:id"
-              element={<BlogDetails blogData={blogData} />}
-            ></Route>
-            <Route
-              path="/signup"
-              element={<UserAuthForm pageUrl="signup"></UserAuthForm>}
-            ></Route>
-          </Route>
-        </Routes>
-      </GlobalContextProvider>
+      <Routes>
+        <Route path="/" element={<Navbar></Navbar>}>
+          <Route index element={<Home />}></Route>
+          <Route
+            path="/login"
+            element={<UserAuthForm pageUrl="login"></UserAuthForm>}
+          ></Route>
+          <Route path="/write" element={<WriteBlog />}></Route>
+          <Route path="/blog" element={<Home></Home>}></Route>
+          <Route
+            path="/blog/:id"
+            element={<BlogDetails allBlogsGetFromDB={allBlogsGetFromDB} />}
+          ></Route>
+          <Route
+            path="/signup"
+            element={<UserAuthForm pageUrl="signup"></UserAuthForm>}
+          ></Route>
+        </Route>
+      </Routes>
     </>
   );
 };

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { SingleBlog } from "../components";
-import blogData from "../constants";
+// import blogData from "../constants";
 import { GlobalContext } from "../context/GlobalContext.jsx";
 
 const WriteBlog = () => {
-  const { formHandler } = useContext(GlobalContext);
+  const { formHandler,allBlogsGetFromDB } = useContext(GlobalContext);
 
   return (
     <div className="md:px-[100px] px-[20px] flex my-[5rem] gap-10">
@@ -158,7 +158,7 @@ const WriteBlog = () => {
 
       {/* left sidebar */}
       <div className="hidden md:grid grid-cols-1 gap-10 w-[30%]">
-        {blogData.map((blog, index) => {
+        {allBlogsGetFromDB.map((blog, index) => {
           if (index > 2) return "";
           else return <SingleBlog key={blog.key} blog={blog}></SingleBlog>;
         })}

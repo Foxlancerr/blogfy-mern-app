@@ -19,9 +19,7 @@ const postBlogSchema = new mongoose.Schema({
         index: true
     },
     keywords: [String],
-    coverImage: {
-        type: String,
-    },
+    coverImage: {String},
     contents: [
         { mainParagraphs: [String] },
         { heading1: [String], paragragh1: [String] },
@@ -33,6 +31,6 @@ const postBlogSchema = new mongoose.Schema({
     }
 })
 
-const Post = mongoose.model('Post', postBlogSchema);
+const PostBlog = mongoose.model('PostBlog', postBlogSchema);
 
-export default Post;
+export default PostBlog;

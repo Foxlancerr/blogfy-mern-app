@@ -7,7 +7,7 @@ import image6 from "./assets/img6.jpg";
 
 
 
-let blogData = [
+let dummyJsonData = [
 
     {
         "key": 0,
@@ -311,4 +311,4 @@ let blogData = [
     },
 ]
 
-export default blogData;
+export default dummyJsonData;

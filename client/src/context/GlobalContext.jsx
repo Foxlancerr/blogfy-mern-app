@@ -1,36 +1,38 @@
 import React, { createContext, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import blogData from "../constants";
-import {
-  getDataFromSession,
-  clearAllDataFromSession,
-  storeDataInSession,
-  removeDataFromSession,
-} from "../utils/sessionStorage";
+import dummyJsonData from "../constants";
 
 // create contexts here...
 export const GlobalContext = createContext();
 
 const GlobalContextProvider = ({ children }) => {
+  // based on this we can authenticate the user
   let [auth, setAuth] = useState(false);
+
+  // store the blogs data which is accessed from DB
+  let [allBlogsGetFromDB, setAllBlogsGetFromDB] = useState(dummyJsonData);
+
+  /**
+   * @param {if i comment the useEfect hook then it will fetch local data present }
+   */
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/v1/blogs")
+      .then((res) => res.json())
+      .then((result) => {
+        setAllBlogsGetFromDB(result);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   let [formDataSaved, setFormDataSaved] = useState({});
-  // console.log(formDataSaved);
+  console.log(allBlogsGetFromDB);
 
-  let [blogPost, setBlogPost] = useState({
-    title: "",
-    tagline: "",
-    coverImage: "",
-    keyword: [],
-    contents: [],
-  });
-
-  console.log("blogPost ====>", blogPost);
   console.log("formDataSaved ====>", formDataSaved);
 
-  // fetching data from the form
-
-  const fetchData = async (url, data) => {
+  // sending Data into backend
+  const sendFrontDataIntoDB = async (url, data) => {
     console.log(data);
     try {
       const response = await fetch("http://localhost:3000/api/v1/" + url, {
@@ -123,7 +125,7 @@ const GlobalContextProvider = ({ children }) => {
     // }
 
     setFormDataSaved(writeData);
-    fetchData("/blogs/create", writeData);
+    sendFrontDataIntoDB("/blogs/create", writeData);
     // console.log(writeData);
 
     // based on condition we can set the data
@@ -159,17 +161,11 @@ const GlobalContextProvider = ({ children }) => {
       value={{
         auth,
         setAuth,
-        getDataFromSession,
-        removeDataFromSession,
-        clearAllDataFromSession,
-        storeDataInSession,
-        blogData,
+        allBlogsGetFromDB,
         formHandler,
         setFormDataSaved,
         formDataSaved,
-        fetchData,
-        blogPost,
-        setBlogPost,
+        sendFrontDataIntoDB,
       }}
     >
       <>

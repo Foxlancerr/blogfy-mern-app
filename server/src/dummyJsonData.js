@@ -1,16 +1,16 @@
-import image1 from "../public/assets/img1.jpg";
-import image2 from "../public/assets/img2.jpg";
-import image3 from "../public/assets/img3.jpg";
-import image4 from "../public/assets/img4.jpg";
-import image5 from "../public/assets/img5.jpg";
-import image6 from "../public/assets/img6.jpg";
-import path from "path";
-const imagePath = path.join(__dirname, "public/assets/img6.jpg");
-console.log(imagePath);
+// import image1 from "../public/assets/img1.jpg";
+// import image2 from "../public/assets/img2.jpg";
+// import image3 from "../public/assets/img3.jpg";
+// import image4 from "../public/assets/img4.jpg";
+// import image5 from "../public/assets/img5.jpg";
+// import image6 from "../public/assets/img6.jpg"
 
-
-
-
+let image1 = "1"
+let image2 = "1"
+let image3 = "1"
+let image4 = "1"
+let image5 = "1"
+let image6 = "1"
 
 let dummyJsonData = [
 

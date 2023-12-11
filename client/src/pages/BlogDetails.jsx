@@ -2,9 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import {Footer} from "../components/index"
 
-const BlogDetails = ({ blogData }) => {
+const BlogDetails = ({ allBlogsGetFromDB }) => {
   const { id } = useParams();
-  let { title, tagline, keywords, coverImage, contents } = blogData[id];
+  let { title, tagline, keywords, coverImage, contents } = allBlogsGetFromDB[id];
 
   return (
     <>
