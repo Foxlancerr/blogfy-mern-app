@@ -13,19 +13,22 @@ export const GlobalContext = createContext();
 const GlobalContextProvider = ({ children }) => {
   // based on this we can authenticate the user
   let [userAuth, setUserAuth] = useState(false);
-  console.log(userAuth);
+  console.log("Global Auth", userAuth);
 
   // store the blogs data which is accessed from DB
   let [allBlogsGetFromDB, setAllBlogsGetFromDB] = useState(dummyJsonData);
 
+  
+
   useEffect(() => {
     let accessTokenInSession = getDataFromSession("access_token");
-    if (accessTokenInSession) {
-      setUserAuth(true);
-    } else {
-      setUserAuth(false);
-    }
+   if(accessTokenInSession){
+    setUserAuth(true)
+   }else{
+    setUserAuth(false)
+   }
   }, []);
+
 
   /**
    * @param {if i comment the useEfect hook then it will fetch local data present }
@@ -70,7 +73,6 @@ const GlobalContextProvider = ({ children }) => {
     }
   };
 
-
   // form submission
   const formHandler = async (event, formId, typeOfForm) => {
     event.preventDefault();
@@ -89,9 +91,14 @@ const GlobalContextProvider = ({ children }) => {
         break;
       case "sign-in":
         const res = await sendFrontDataIntoDB("/users/signin", formData);
-        console.log(res);
-        storeDataInSession("access_Token", res.token);
-        setUserAuth(true);
+        console.log(res.token);
+
+        if (res.token == null && res.token == undefined) {
+          return;
+        } else {
+          storeDataInSession("access_Token", res.token);
+          setUserAuth(true);
+        }
 
         break;
       case "create-blog-Form":

@@ -1,12 +1,28 @@
-import React, { useState } from "react";
-import { Outlet, NavLink, Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Outlet, NavLink, Link,Navigate } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { CiEdit } from "react-icons/ci";
 import { LuMenu } from "react-icons/lu";
 import logo from "../assets/logo.png";
+import { GlobalContext } from "../context/GlobalContext.jsx";
+import {
+  clearAllDataFromSession,
+} from "../utils/sessionStorage.js";
+
+
 const Navbar = () => {
   const [toggleNavigation, setToggleNavigation] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
+
+  const { userAuth, setUserAuth } = useContext(GlobalContext);
+  console.log(userAuth);
+  const signOutUser = () => {
+    clearAllDataFromSession();
+    setUserAuth(false);
+    setToggleNavigation(false);
+  };
+
+  console.log(userAuth);
   return (
     <>
       <nav className="flex justify-between items-center bg-slate-100/60 py-4 md:px-[100px] px-[20px] relative w-[100%]">
@@ -27,9 +43,12 @@ const Navbar = () => {
 
         {/* search and munu icons */}
         <div className="flex md:hidden items-center gap-3">
-          <div className="flex bg-slate-200 p-2 rounded-full cursor-pointer" onClick={()=>{
-            setOpenSearch(prev=>!prev)
-          }}>
+          <div
+            className="flex bg-slate-200 p-2 rounded-full cursor-pointer"
+            onClick={() => {
+              setOpenSearch((prev) => !prev);
+            }}
+          >
             <IoSearch className="text-2xl" />
           </div>
 
@@ -56,14 +75,13 @@ const Navbar = () => {
             />
           </div>
 
-          <button
+          <Link
+            to="/signin"
             className="bg-black text-white py-2 px-5 rounded-full font-bold"
-            onClick={() => {
-              console.log("hello");
-            }}
+            onClick={signOutUser}
           >
             Logout
-          </button>
+          </Link>
 
           <Link
             to="/write"
@@ -92,7 +110,7 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`md:hidden absolute right-0 top-20 w-[50vw] flex-col gap-3 bg-slate-200 p-5 rounded ${
+          className={`md:hidden absolute right-2 top-20  flex-col gap-3 bg-slate-100 py-10 px-4 rounded ${
             toggleNavigation ? "flex" : "hidden"
           }`}
         >
@@ -109,17 +127,17 @@ const Navbar = () => {
             <CiEdit className="text-2xl"></CiEdit>
             <p className="text-xl">Write</p>
           </Link>
-          <button
+          <Link
+            to="/signin"
             className="bg-black text-white py-2 px-5 rounded-full font-bold"
-            onClick={() => {
-              console.log("hello");
-            }}
+            onClick={signOutUser}
           >
             Logout
-          </button>
+          </Link>
         </div>
       </nav>
-      <Outlet></Outlet>
+      {userAuth ? <Outlet></Outlet>: <Navigate to="/signin"/>}
+      {/* <Outlet></Outlet> */}
     </>
   );
 };

@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Footer, SingleBlog } from "../components";
 import { GlobalContext } from "../context/GlobalContext";
+import { Navigate } from "react-router-dom";
 
 const Home = () => {
-  const { allBlogsGetFromDB } = useContext(GlobalContext);
+  const { allBlogsGetFromDB, userAuth } = useContext(GlobalContext);
   return (
     <>
       <div className="md:px-[100px] px-[20px] flex flex-col gap-6">
