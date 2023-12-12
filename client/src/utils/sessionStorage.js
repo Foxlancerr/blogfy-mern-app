@@ -1,5 +1,5 @@
 export const storeDataInSession = (key, value) => {
-    return sessionStorage.setItem(key, JSON.stringify(value));
+    sessionStorage.setItem(key, JSON.stringify(value));
 }
 export const getDataFromSession = (key) => {
     if (key && sessionStorage) {

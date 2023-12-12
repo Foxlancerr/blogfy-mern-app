@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 
 
 //routes declaration
-app.use("/api/v1", userRouter)
+app.use("/api/v1/users/", userRouter)
 app.use("/api/v1", profileRouter)
 app.use("/api/v1", postBlogRouter)
 
@@ -32,6 +32,14 @@ app.use("/api/v1", postBlogRouter)
 
 export { app }
 
+/**
+ * @param {blog creation API}
+ */
+// post   "/api/v1/blogs/create"       blog creation
+// get    "/api/v1/blogs"              veiw all blogs
 
-// post "/api/v1//blogs/create" blog creation
-// get "/api/v1//blogs" veiw all blogs
+/**
+ * @param {user creation API}
+ */
+// post   "/api/v1/users/signup"      sign up user
+// post   "/api/v1/users/signin"      sign in user

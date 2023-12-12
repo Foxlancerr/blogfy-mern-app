@@ -148,7 +148,7 @@ const WriteBlog = () => {
             className="font-meduim mt-3 py-3 px-6 bg-red-400 hover:bg-red-400/90 rounded font-semibold w-full text-3xl"
             onClick={(e) => {
               const id = document.getElementById("writeBlog-form");
-              formHandler(e, id, "writeBlogForm");
+              formHandler(e, id, "create-blog-Form");
             }}
           >
             Submit

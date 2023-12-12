@@ -55,7 +55,7 @@ const RegisterForm = ({ pageUrl }) => {
     <div className="flex justify-center items-center h-[calc(100vh-60px)]">
       <div className="bg-slate-200/70 p-16 rounded-lg flex justify-center flex-col items-center gap-3 h-[450px] w-[450px]">
         <h1 className="text-3xl text-center capitalize sm:text-3xl font-inter text-red-400 font-bold mb-[30px]">
-          {pageUrl == "login" ? "welcome back" : "continue for signup"}
+          continue for signup
         </h1>
         <form
           id="sign-up-form"
