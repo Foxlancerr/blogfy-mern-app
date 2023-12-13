@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import dummyJsonData from "../constants";
+import { DOMAIN_URL } from "../domainpath.js";
 import {
   getDataFromSession,
   storeDataInSession,
@@ -32,7 +33,7 @@ const GlobalContextProvider = ({ children }) => {
    */
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/v1/blogs/db")
+    fetch(DOMAIN_URL + "/blogs/db")
       .then((res) => res.json())
       .then((result) => {
         setAllBlogsGetFromDB(result.reverse());
@@ -46,7 +47,7 @@ const GlobalContextProvider = ({ children }) => {
   // sending Data into backend
   const sendFrontDataIntoDB = async (url, data) => {
     try {
-      const response = await fetch("http://localhost:3000/api/v1" + url, {
+      const response = await fetch(DOMAIN_URL + url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
