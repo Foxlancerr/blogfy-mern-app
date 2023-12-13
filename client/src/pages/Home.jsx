@@ -28,7 +28,7 @@ const Home = () => {
         </div>
 
         <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
-          {allBlogsGetFromDB.map((blog) => (
+          {allBlogsGetFromDB.reverse().map((blog) => (
             <SingleBlogV1 key={blog.key} blog={blog}></SingleBlogV1>
           ))}
         </div>
@@ -37,12 +37,7 @@ const Home = () => {
           <h1 className="text-4xl mb-3">Latest Articles</h1>
           <hr className="border-black/50 border-1" />
         </div>
-        <div className=" bg-red-600">
-          <SingleBlogV2
-            key={Date.now()}
-            blog={allBlogsGetFromDB[0]}
-          ></SingleBlogV2>
-        </div>
+        <div className=" bg-red-600"></div>
       </div>
       <Footer></Footer>
     </>

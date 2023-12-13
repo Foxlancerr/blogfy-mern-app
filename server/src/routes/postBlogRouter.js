@@ -1,12 +1,13 @@
 import express from "express";
 import { upload } from "../middleware/multer.upload.middleware.js";
-import { writeBlogPostMethod, showJsonBlogData, showBlogDataFromDB } from "../controllers/index.js";
+import { writeBlogPostMethod, showJsonBlogData, showBlogDataFromDB, showSingleBlogBasedOnId } from "../controllers/index.js";
 
 const postBlogRouter = express.Router();
 
 postBlogRouter
     .get("/blogs/json", showJsonBlogData)
     .get("/blogs/db", showBlogDataFromDB)
+    .get("/blogs/db/:id", showSingleBlogBasedOnId)
     .post('/blogs/create', writeBlogPostMethod)
 
 export default postBlogRouter;

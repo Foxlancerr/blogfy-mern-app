@@ -28,7 +28,7 @@ app.use("/api/v1/users/", userRouter)
 app.use("/api/v1", profileRouter)
 app.use("/api/v1", postBlogRouter)
 
-// http://localhost:8000/api/v1/users/register
+// http://localhost:8000/api/v1/users/
 
 export { app }
 
@@ -36,7 +36,8 @@ export { app }
  * @param {blog creation API}
  */
 // post   "/api/v1/blogs/create"       blog creation
-// get    "/api/v1/blogs"              veiw all blogs
+// get    "/api/v1/blogs/db"              veiw all blogs
+// get    "/api/v1/blogs/db/:id"              veiw single blogs
 
 /**
  * @param {user creation API}

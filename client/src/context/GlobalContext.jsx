@@ -105,6 +105,7 @@ const GlobalContextProvider = ({ children }) => {
         sendFrontDataIntoDB("/blogs/create", formData);
         break;
 
+
       default:
         break;
     }

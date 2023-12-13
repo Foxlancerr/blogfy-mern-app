@@ -1,7 +1,7 @@
-import { writeBlogPostMethod, showBlogDataFromDB, showJsonBlogData } from "./blogPost.controllar.js";
+import { writeBlogPostMethod, showBlogDataFromDB, showJsonBlogData,showSingleBlogBasedOnId } from "./blogPost.controllar.js";
 
 export {
     writeBlogPostMethod,
     showBlogDataFromDB,
-    showJsonBlogData
+    showJsonBlogData,showSingleBlogBasedOnId
 }

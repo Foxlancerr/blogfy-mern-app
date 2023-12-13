@@ -76,3 +76,18 @@ export const showBlogDataFromDB = async (req, res) => {
         res.status(500).json({ error: err.message })
     }
 }
+
+export const showSingleBlogBasedOnId = async (req, res) => {
+    try {
+        const blogId = req.params.id;
+        console.log(blogId);
+        const blog = await PostBlog.findOne({ key: blogId });
+        if (!blog) {
+            res.status(404).json({ error: "No Blog is found with this ID " + blogId });
+            return;
+        }
+        res.status(201).json(blog);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
