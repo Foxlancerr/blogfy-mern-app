@@ -17,7 +17,7 @@ npm install
 npm run dev
 ```
 
-## Client Side Routings
+## Client Side Local Routings
 
 - Home: http://localhost:5173
 - Blog: http://localhost:5173/blog
@@ -43,19 +43,39 @@ npm install
 npm run dev
 ```
 
-## Client Side Routings
+## LOCAL Server Side Routings
 
 ### Blog Creation API
 
-- Method (GET) http://localhost:3000/api/v1/blogs/db veiw all blogs from DB
-- Method (GET) http://localhost:3000/api/v1/blogs/json veiw all blogs from JSON
-- Method (POST) http://localhost:3000/api/v1/blogs/create blog creation
+- Method (GET) http://localhost/3000:/api/v1/blogs/db veiw all blogs from DB
+- Method (GET) http://localhost/3000:/api/v1/blogs/db/:id veiw single blogs from DB
+- Method (GET) http://localhost/3000:/api/v1/blogs/json veiw all blogs from JSON
+- Method (POST) http://localhost/3000:/api/v1/blogs/create blog creation
 
 ### User Creation API
 
-- Method (POST) http://localhost:3000/api/v1/users/signup sign up user
-- Method (POST) http://localhost:3000/api/v1/users/signin sign in user
+- Method (POST) http://localhost/3000:/api/v1/users/signup sign up user
+- Method (POST) http://localhost/3000:/api/v1/users/signin sign in user
 
+## Client Side VERCEL Routings
 
-## Random Images for testing
-- https://source.unsplash.com/tech
+- Home: https://blogfy-mern-app-client.vercel.app/
+- Blog: https://blogfy-mern-app-client.vercel.app//blog
+- BlogDetailsPage: https://blogfy-mern-app-client.vercel.app//blog/:id
+- Sign In: https://blogfy-mern-app-client.vercel.app//signin
+- Sign Up: https://blogfy-mern-app-client.vercel.app//signup
+- New Blog Create Page: https://blogfy-mern-app-client.vercel.app//write
+
+## VERCEL Server Side Routings
+
+### Blog Creation API
+
+- Method (GET) https://blogfy-mern-app-server.vercel.app/api/v1/blogs/db veiw all blogs from DB
+- Method (GET) https://blogfy-mern-app-server.vercel.app/api/v1/blogs/db/:id veiw single blogs from DB
+- Method (GET) https://blogfy-mern-app-server.vercel.app/api/v1/blogs/json veiw all blogs from JSON
+- Method (POST) https://blogfy-mern-app-server.vercel.app/api/v1/blogs/create blog creation
+
+### User Creation API
+
+- Method (POST) https://blogfy-mern-app-server.vercel.app/api/v1/users/signup sign up user
+- Method (POST) https://blogfy-mern-app-server.vercel.app/api/v1/users/signin sign in user
