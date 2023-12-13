@@ -22,9 +22,9 @@ const App = () => {
           <Route index element={<Home />}></Route>
           {/* <Route index element={<Home />}></Route> */}
           <Route path="/write" element={<WriteBlog />}></Route>
-          <Route path="/blogs" element={<Home></Home>}></Route>
+          <Route path="/blog" element={<Home></Home>}></Route>
           <Route
-            path="/blogs/:id"
+            path="/blog/:id"
             element={<BlogDetails allBlogsGetFromDB={allBlogsGetFromDB} />}
           ></Route>
         </Route>

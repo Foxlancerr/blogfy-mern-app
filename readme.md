@@ -20,8 +20,8 @@ npm run dev
 ## Client Side Routings
 
 - Home: http://localhost:5173
-- Blog: http://localhost:5173/blogs
-- BlogDetailsPage: http://localhost:5173/blogs/:id
+- Blog: http://localhost:5173/blog
+- BlogDetailsPage: http://localhost:5173/blog/:id
 - Sign In: http://localhost:5173/signin
 - Sign Up: http://localhost:5173/signup
 - New Blog Create Page: http://localhost:5173/write

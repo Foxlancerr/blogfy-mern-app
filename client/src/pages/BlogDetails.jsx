@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import {Footer} from "../components/index"
 
 const BlogDetails = ({ allBlogsGetFromDB }) => {
+  const route = useParams();
   const { id } = useParams();
+  console.log(route);
   let { title, tagline, keywords, coverImage, contents } = allBlogsGetFromDB[id];
 
   return (
