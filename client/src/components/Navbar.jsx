@@ -1,28 +1,38 @@
-import React, { useContext, useState } from "react";
-import { Outlet, NavLink, Link,Navigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Outlet, NavLink, Link, Navigate } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { CiEdit } from "react-icons/ci";
 import { LuMenu } from "react-icons/lu";
 import logo from "../assets/logo.png";
 import { GlobalContext } from "../context/GlobalContext.jsx";
-import {
-  clearAllDataFromSession,
-} from "../utils/sessionStorage.js";
-
+import { clearAllDataFromSession } from "../utils/sessionStorage.js";
 
 const Navbar = () => {
   const [toggleNavigation, setToggleNavigation] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [openSearch, setOpenSearch] = useState(false);
 
-  const { userAuth, setUserAuth } = useContext(GlobalContext);
-  console.log(userAuth);
+  const { userAuth, setUserAuth, allBlogsGetFromDB, setAllBlogsGetFromDB } =
+    useContext(GlobalContext);
+
+    console.log(allBlogsGetFromDB);
+
   const signOutUser = () => {
     clearAllDataFromSession();
     setUserAuth(false);
     setToggleNavigation(false);
   };
 
-  console.log(userAuth);
+  useEffect(() => {
+    console.log(searchQuery);
+    const filteredBlogs = allBlogsGetFromDB.filter((blog) =>
+      blog.keywords.includes(searchQuery)
+    );
+    console.log(filteredBlogs);
+
+    setAllBlogsGetFromDB(filteredBlogs);
+  }, [searchQuery]);
+
   return (
     <>
       <nav className="flex justify-between items-center bg-slate-100/60 py-4 md:px-[100px] px-[20px] relative w-[100%]">
@@ -72,6 +82,9 @@ const Navbar = () => {
               name="search"
               id=""
               placeholder="Search here..."
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+              }}
             />
           </div>
 
@@ -106,6 +119,9 @@ const Navbar = () => {
               name="search"
               id=""
               placeholder="Search here..."
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+              }}
             />
           </div>
         </div>

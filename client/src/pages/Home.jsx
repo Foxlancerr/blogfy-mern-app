@@ -28,7 +28,7 @@ const Home = () => {
         </div>
 
         <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
-          {allBlogsGetFromDB.reverse().map((blog) => (
+          {allBlogsGetFromDB.map((blog) => (
             <SingleBlogV1 key={blog.key} blog={blog}></SingleBlogV1>
           ))}
         </div>

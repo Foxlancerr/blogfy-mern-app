@@ -18,17 +18,14 @@ const GlobalContextProvider = ({ children }) => {
   // store the blogs data which is accessed from DB
   let [allBlogsGetFromDB, setAllBlogsGetFromDB] = useState(dummyJsonData);
 
-  
-
   useEffect(() => {
     let accessTokenInSession = getDataFromSession("access_token");
-   if(accessTokenInSession){
-    setUserAuth(true)
-   }else{
-    setUserAuth(false)
-   }
+    if (accessTokenInSession) {
+      setUserAuth(true);
+    } else {
+      setUserAuth(false);
+    }
   }, []);
-
 
   /**
    * @param {if i comment the useEfect hook then it will fetch local data present }
@@ -38,7 +35,7 @@ const GlobalContextProvider = ({ children }) => {
     fetch("http://localhost:3000/api/v1/blogs/db")
       .then((res) => res.json())
       .then((result) => {
-        setAllBlogsGetFromDB(result);
+        setAllBlogsGetFromDB(result.reverse());
       })
       .catch((err) => console.error(err));
   }, []);
@@ -105,7 +102,6 @@ const GlobalContextProvider = ({ children }) => {
         sendFrontDataIntoDB("/blogs/create", formData);
         break;
 
-
       default:
         break;
     }
@@ -122,6 +118,7 @@ const GlobalContextProvider = ({ children }) => {
         userAuth,
         setUserAuth,
         allBlogsGetFromDB,
+        setAllBlogsGetFromDB,
         formHandler,
         setFormDataSaved,
         formDataSaved,
