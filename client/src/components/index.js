@@ -1,8 +1,9 @@
 import Navbar from "./Navbar";
 import InputBox from "./InputBox";
 import Footer from "./Footer";
-import SingleBlog from "./SingleBlog";
+import SingleBlogV1 from "./SingleBlogV1";
+import SingleBlogV2 from "./SingleBlogV2";
 
 export {
-    Navbar, InputBox,Footer,SingleBlog
+    Navbar, InputBox, Footer, SingleBlogV1, SingleBlogV2
 }

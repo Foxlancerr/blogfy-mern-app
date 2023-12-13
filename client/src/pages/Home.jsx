@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Footer, SingleBlog } from "../components";
+import { Footer, SingleBlogV1, SingleBlogV2 } from "../components";
 import { GlobalContext } from "../context/GlobalContext";
 import { Navigate } from "react-router-dom";
 
@@ -24,14 +24,25 @@ const Home = () => {
         </div>
         <div className="mt-[5rem]">
           <h1 className="text-4xl mb-3">Top Articles</h1>
-          <hr className="border-red-300 border-2" />
+          <hr className="border-black/50 border-1" />
         </div>
+
         <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
           {allBlogsGetFromDB.map((blog) => (
-            <SingleBlog key={blog.key} blog={blog}></SingleBlog>
+            <SingleBlogV1 key={blog.key} blog={blog}></SingleBlogV1>
           ))}
         </div>
-        {/* <EachBlog blogData={blogData2[2]}></EachBlog> */}
+
+        <div className="mt-[5rem]">
+          <h1 className="text-4xl mb-3">Latest Articles</h1>
+          <hr className="border-black/50 border-1" />
+        </div>
+        <div className=" bg-red-600">
+          <SingleBlogV2
+            key={Date.now()}
+            blog={allBlogsGetFromDB[0]}
+          ></SingleBlogV2>
+        </div>
       </div>
       <Footer></Footer>
     </>

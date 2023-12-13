@@ -34,14 +34,14 @@ const GlobalContextProvider = ({ children }) => {
    * @param {if i comment the useEfect hook then it will fetch local data present }
    */
 
-  useEffect(() => {
-    fetch("http://localhost:3000/api/v1/blogs/json")
-      .then((res) => res.json())
-      .then((result) => {
-        setAllBlogsGetFromDB(result);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/api/v1/blogs/json")
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       setAllBlogsGetFromDB(result);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
 
   let [formDataSaved, setFormDataSaved] = useState({});
   // console.log(allBlogsGetFromDB);

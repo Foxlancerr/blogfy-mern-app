@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { SingleBlog } from "../components";
+import { SingleBlogV1 } from "../components";
 // import blogData from "../constants";
 import { GlobalContext } from "../context/GlobalContext.jsx";
 
 const WriteBlog = () => {
-  const { formHandler,allBlogsGetFromDB } = useContext(GlobalContext);
+  const { formHandler, allBlogsGetFromDB } = useContext(GlobalContext);
 
   return (
     <div className="md:px-[100px] px-[20px] flex my-[5rem] gap-10">
@@ -72,7 +72,10 @@ const WriteBlog = () => {
           </div>
 
           <div className="flex gap-4 md:flex-row md:justify-between mb-4 flex-col">
-            <label htmlFor="mainparagraph" className="mr-2 text-3xl capitalize ">
+            <label
+              htmlFor="mainparagraph"
+              className="mr-2 text-3xl capitalize "
+            >
               main paragraph
             </label>
             <textarea
@@ -160,7 +163,7 @@ const WriteBlog = () => {
       <div className="hidden md:grid grid-cols-1 gap-10 w-[30%]">
         {allBlogsGetFromDB.map((blog, index) => {
           if (index > 2) return "";
-          else return <SingleBlog key={blog.key} blog={blog}></SingleBlog>;
+          else return <SingleBlogV1 key={blog.key} blog={blog}></SingleBlogV1>;
         })}
       </div>
     </div>

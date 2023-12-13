@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Route, Routes,Navigate } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import {
   Home,
   RegisterForm,
@@ -19,7 +19,7 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<Navbar></Navbar>}>
-          <Route index element={userAuth ? <Home /> : <Navigate to="signin" />}></Route>
+          <Route index element={<Home />}></Route>
           {/* <Route index element={<Home />}></Route> */}
           <Route path="/write" element={<WriteBlog />}></Route>
           <Route path="/blog" element={<Home></Home>}></Route>

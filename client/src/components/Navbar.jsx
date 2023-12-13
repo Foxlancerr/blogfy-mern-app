@@ -136,8 +136,8 @@ const Navbar = () => {
           </Link>
         </div>
       </nav>
-      {userAuth ? <Outlet></Outlet>: <Navigate to="/signin"/>}
-      {/* <Outlet></Outlet> */}
+      {/* {userAuth ? <Outlet></Outlet>: <Navigate to="/signin"/>} */}
+      <Outlet></Outlet>
     </>
   );
 };
