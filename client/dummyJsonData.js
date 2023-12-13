@@ -5,20 +5,19 @@
 // import image5 from "../public/assets/img5.jpg";
 // import image6 from "../public/assets/img6.jpg"
 
-// let image1 = "https://source.unsplash.com/tech"
-// let image2 = "https://source.unsplash.com/blog"
-// let image3 = "https://source.unsplash.com/travel"
-// let image4 = "https://source.unsplash.com/beauty"
-// let image5 = "https://source.unsplash.com/education"
-// let image6 = "https://source.unsplash.com/food"
-
+let image1 = "1"
+let image2 = "1"
+let image3 = "1"
+let image4 = "1"
+let image5 = "1"
+let image6 = "1"
 
 let dummyJsonData = [
 
     {
         "key": 0,
-        "keywords": ["vegetable", "drink"],
-        "coverImage": "https://source.unsplash.com/food",
+        "keywords": ["nature", "exploration", "adventure"],
+        "coverImage": image1,
         "title": "WEBSITE ESSENTIALS Best portfolio websites to fuel your inspiration",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
@@ -67,8 +66,8 @@ let dummyJsonData = [
     },
     {
         "key": 1,
-        "keywords": ["AI", "JS", "machine"],
-        "coverImage": "https://source.unsplash.com/education",
+        "keywords": ["technology", "innovation", "digital"],
+        "coverImage": image2,
         "title": "TECH WONDERS: Exploring Cutting-edge Innovations",
         "tagline": "Embark on a Journey Through the Marvels of Technology",
         "contents": [
@@ -116,8 +115,8 @@ let dummyJsonData = [
     },
     {
         "key": 2,
-        "keywords": ["love", "face", "beauty"],
-        "coverImage": "https://source.unsplash.com/beauty",
+        "keywords": ["nature", "exploration", "adventure"],
+        "coverImage": image3,
         "title": "Discovering the Enchanting Beauty of Nature",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
@@ -166,8 +165,8 @@ let dummyJsonData = [
     },
     {
         "key": 3,
-        "keywords": ["nature", "sea", "life"],
-        "coverImage": "https://source.unsplash.com/travel",
+        "keywords": ["nature", "exploration", "adventure"],
+        "coverImage": image4,
         "title": "Discovering the Enchanting Beauty of Nature",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
@@ -217,8 +216,8 @@ let dummyJsonData = [
     {
         "key": 4,
 
-        "keywords": ["popular", "education", "tech"],
-        "coverImage": "https://source.unsplash.com/blog",
+        "keywords": ["nature", "exploration", "adventure"],
+        "coverImage": image5,
         "title": "Discovering the Enchanting Beauty of Nature",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
@@ -267,8 +266,8 @@ let dummyJsonData = [
     },
     {
         "key": 5,
-        "keywords": ["tech", "Ai", "food"],
-        "coverImage": "https://source.unsplash.com/tech",
+        "keywords": ["nature", "exploration", "adventure"],
+        "coverImage": image6,
         "title": "How to easily start a blog and monetize it in 2024",
         "tagline": "Embark on a Journey Through the Wonders of the Natural World",
         "contents": [
