@@ -23,14 +23,15 @@ const Navbar = () => {
     setToggleNavigation(false);
   };
 
+  const filterData = allBlogsGetFromDB.slice(0)
   useEffect(() => {
     console.log(searchQuery);
-    const filteredBlogs = allBlogsGetFromDB.filter((blog) =>
+    const filteredBlogs = filterData.filter((blog) =>
       blog.keywords.includes(searchQuery)
     );
     console.log(filteredBlogs);
 
-    setAllBlogsGetFromDB(filteredBlogs);
+    // setAllBlogsGetFromDB(filteredBlogs);
   }, [searchQuery]);
 
   return (
