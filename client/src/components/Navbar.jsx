@@ -17,7 +17,7 @@ const Navbar = () => {
   const { userAuth, setUserAuth, allBlogsGetFromDB, setAllBlogsGetFromDB } =
     useContext(GlobalContext);
 
-  console.log(allBlogsGetFromDB);
+  // console.log(allBlogsGetFromDB);
 
   const signOutUser = () => {
     clearAllDataFromSession();
@@ -25,16 +25,18 @@ const Navbar = () => {
     setToggleNavigation(false);
   };
 
-  const filterData = allBlogsGetFromDB.slice(0);
-  useEffect(() => {
-    console.log(searchQuery);
-    const filteredBlogs = filterData.filter((blog) =>
-      blog.keywords.includes(searchQuery)
-    );
-    console.log(filteredBlogs);
+  // if(allBlogsGetFromDB.length > 0) {
+  //   const filterData = allBlogsGetFromDB.slice(0);
+  // }
+  // useEffect(() => {
+  //   // console.log(searchQuery);
+  //   const filteredBlogs = filterData.filter((blog) =>
+  //     blog.keywords.includes(searchQuery)
+  //   );
+  //   // console.log(filteredBlogs);
 
-    // setAllBlogsGetFromDB(filteredBlogs);
-  }, [searchQuery]);
+  //   // setAllBlogsGetFromDB(filteredBlogs);
+  // }, [searchQuery]);
 
   return (
     <>

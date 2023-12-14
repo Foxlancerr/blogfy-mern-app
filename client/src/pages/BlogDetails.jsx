@@ -11,7 +11,7 @@ const BlogDetails = ({ allBlogsGetFromDB }) => {
   // "http://localhost:3000/api/v1" 
   const [blog, setBlog] = useState({});
   const { id } = useParams();
-  console.log(blog);
+  // console.log(blog);
 
   const fetchSingleBlog = async () => {
     try {

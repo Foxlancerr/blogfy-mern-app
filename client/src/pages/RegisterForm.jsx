@@ -9,7 +9,7 @@ import { GlobalContext } from "../context/GlobalContext.jsx";
 const RegisterForm = ({ pageUrl }) => {
   const navigate = useNavigate();
   let [data, setData] = useState({});
-  console.log(data);
+  // console.log(data);
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();

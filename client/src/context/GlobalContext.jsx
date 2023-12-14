@@ -14,11 +14,11 @@ export const GlobalContext = createContext();
 const GlobalContextProvider = ({ children }) => {
   // based on this we can authenticate the user
   let [userAuth, setUserAuth] = useState(false);
-  console.log("Global Auth", userAuth);
+  // console.log("Global Auth", userAuth);
 
   // store the blogs data which is accessed from DB
   let [allBlogsGetFromDB, setAllBlogsGetFromDB] = useState(dummyJsonData);
-  console.log(allBlogsGetFromDB);
+  // console.log(allBlogsGetFromDB);
 
   useEffect(() => {
     let accessTokenInSession = getDataFromSession("access_token");
@@ -91,7 +91,7 @@ const GlobalContextProvider = ({ children }) => {
         break;
       case "sign-in":
         const res = await sendFrontDataIntoDB("/users/signin", formData);
-        console.log(res.token);
+        // console.log(res.token);
 
         if (res.token == null && res.token == undefined) {
           return;
@@ -104,7 +104,7 @@ const GlobalContextProvider = ({ children }) => {
       case "create-blog-Form":
         sendFrontDataIntoDB("/blogs/create", formData);
 
-        console.log(newBlog);
+        // console.log(newBlog);
         break;
 
       default:
