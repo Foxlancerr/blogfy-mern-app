@@ -62,11 +62,11 @@ npm run dev
 ## Client Side VERCEL Routings
 
 - Home: https://blogfy-mern-app-client.vercel.app/
-- Blog: https://blogfy-mern-app-client.vercel.app//blog
-- BlogDetailsPage: https://blogfy-mern-app-client.vercel.app//blog/:id
-- Sign In: https://blogfy-mern-app-client.vercel.app//signin
-- Sign Up: https://blogfy-mern-app-client.vercel.app//signup
-- New Blog Create Page: https://blogfy-mern-app-client.vercel.app//write
+- Blog: https://blogfy-mern-app-client.vercel.app/blog
+- BlogDetailsPage: https://blogfy-mern-app-client.vercel.app/blog/:id
+- Sign In: https://blogfy-mern-app-client.vercel.app/signin
+- Sign Up: https://blogfy-mern-app-client.vercel.app/signup
+- New Blog Create Page: https://blogfy-mern-app-client.vercel.app/write
 
 ## VERCEL Server Side Routings
 
