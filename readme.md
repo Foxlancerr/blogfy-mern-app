@@ -47,15 +47,17 @@ npm run dev
 
 ### Blog Creation API
 
-- Method (GET) http://localhost/3000:/api/v1/blogs/db veiw all blogs from DB
-- Method (GET) http://localhost/3000:/api/v1/blogs/db/:id veiw single blogs from DB
-- Method (GET) http://localhost/3000:/api/v1/blogs/json veiw all blogs from JSON
-- Method (POST) http://localhost/3000:/api/v1/blogs/create blog creation
+"http://localhost:3000/api/v1/users/signin"
+
+- Method (GET) http://localhost:3000/api/v1/blogs/db veiw all blogs from DB
+- Method (GET) http://localhost:3000/api/v1/blogs/db/:id veiw single blogs from DB
+- Method (GET) http://localhost:3000/api/v1/blogs/json veiw all blogs from JSON
+- Method (POST) http://localhost:3000/api/v1/blogs/create blog creation
 
 ### User Creation API
 
-- Method (POST) http://localhost/3000:/api/v1/users/signup sign up user
-- Method (POST) http://localhost/3000:/api/v1/users/signin sign in user
+- Method (POST) http://localhost:3000/api/v1/users/signup sign up user
+- Method (POST) http://localhost:3000/api/v1/users/signin sign in user
 
 ## Client Side VERCEL Routings
 

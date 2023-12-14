@@ -18,6 +18,7 @@ const GlobalContextProvider = ({ children }) => {
 
   // store the blogs data which is accessed from DB
   let [allBlogsGetFromDB, setAllBlogsGetFromDB] = useState(dummyJsonData);
+  console.log(allBlogsGetFromDB);
 
   useEffect(() => {
     let accessTokenInSession = getDataFromSession("access_token");
@@ -36,7 +37,7 @@ const GlobalContextProvider = ({ children }) => {
     fetch(DOMAIN_URL + "/blogs/db")
       .then((res) => res.json())
       .then((result) => {
-        setAllBlogsGetFromDB(result.reverse());
+        setAllBlogsGetFromDB(result);
       })
       .catch((err) => console.error(err));
   }, []);
@@ -48,6 +49,7 @@ const GlobalContextProvider = ({ children }) => {
   const sendFrontDataIntoDB = async (url, data) => {
     try {
       const response = await fetch(DOMAIN_URL + url, {
+        // const response = await fetch("http://localhost:3000/api/v1/users/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -101,6 +103,8 @@ const GlobalContextProvider = ({ children }) => {
         break;
       case "create-blog-Form":
         sendFrontDataIntoDB("/blogs/create", formData);
+
+        console.log(newBlog);
         break;
 
       default:

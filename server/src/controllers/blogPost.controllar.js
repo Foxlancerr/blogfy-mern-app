@@ -48,7 +48,7 @@ export const writeBlogPostMethod = async (req, res) => {
             const savedPost = await post.save();
             console.log(savedPost);
 
-            res.status(201).json(savedPost);
+            res.status(201).json({ message: "The new blog is created successfully", data: savedPost });
         } catch (error) {
             res.status(500).json({ error: error.message });
             return

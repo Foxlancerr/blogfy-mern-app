@@ -3,14 +3,11 @@ import cors from "cors"
 import userRouter from "./routes/userRouter.js"
 import profileRouter from "./routes/profileRouter.js"
 import postBlogRouter from "./routes/postBlogRouter.js"
+import { upload } from "./middleware/multer.upload.middleware.js"
 // import cookieParser from "cookie-parser"
 
 const app = express()
 
-// app.use(cors({
-//     origin: process.env.CORS_ORIGIN,
-//     credentials: true
-// }))
 app.use(cors())
 
 app.use(express.json({ limit: "16kb" }))
@@ -28,7 +25,28 @@ app.use("/api/v1/users/", userRouter)
 app.use("/api/v1", profileRouter)
 app.use("/api/v1", postBlogRouter)
 
-// http://localhost:8000/api/v1/users/
+app.get("/", (req, res) => {
+    res.send("hello world!");
+})
+
+// multer testing
+app.post('/upload', upload.single('file'), async (req, res) => {
+    try {
+        // Save file information to MongoDB
+        const newFile = new FileModel({
+            filename: req.file.filename,
+            // Add more fields as needed
+        });
+
+        const savedFile = await newFile.save();
+
+        res.status(200).json({ success: true, file: savedFile });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// http://localhost:3000/api/v1/users/
 
 export { app }
 

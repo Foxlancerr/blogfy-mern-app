@@ -90,6 +90,7 @@ const RegisterForm = ({ pageUrl }) => {
             onClick={(e) => {
               const id = document.getElementById("sign-up-form");
               formHandler(e, id, "sign-up");
+              
             }}
           >
             register
