@@ -4,10 +4,11 @@ import { Footer } from "../components/index";
 import { GlobalContext } from "../context/GlobalContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { DOMAIN_URL } from "../domainpath.js";
 
 const BlogDetails = ({ allBlogsGetFromDB }) => {
   const navigate = useNavigate();
-  // http://localhost:8000/api/v1/users/
+  // "http://localhost:3000/api/v1" 
   const [blog, setBlog] = useState({});
   const { id } = useParams();
   console.log(blog);
@@ -15,7 +16,7 @@ const BlogDetails = ({ allBlogsGetFromDB }) => {
   const fetchSingleBlog = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/blogs/db/${id}`
+        `${DOMAIN_URL}/blogs/db/${id}`
       );
       const result = await response.json();
       setBlog(result);
@@ -40,14 +41,12 @@ const BlogDetails = ({ allBlogsGetFromDB }) => {
   }, [id]);
 
   // console.log(allBlogsGetFromDB);
-  
+
   // let { title, tagline, keywords, coverImage, contents } =
   //   allBlogsGetFromDB[id];
   let { title, tagline, keywords, coverImage, contents } = blog;
 
   return (
-    
-
     <>
       <div className="md:px-[100px] px-[30px] flex flex-col gap-6">
         <div className="mt-[15vh] flex justify-center flex-col items-center gap-5">
