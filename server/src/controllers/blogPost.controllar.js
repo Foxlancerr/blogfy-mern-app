@@ -8,8 +8,8 @@ export const writeBlogPostMethod = async (req, res) => {
         console.log(req.body);
 
 
-        // if ([title, tagline, keywords, coverImage, mainParagraph, paragraph1, paragraph2, heading1, heading2].some(val => val?.trim() === undefined)) {
-        //     res.json({ error: "All field are required to filled it" });
+        // if ([title, tagline, keywords, mainParagraph, paragraph1, paragraph2, heading1, heading2].some(val => val.length == 0)) {
+        //     res.json({ message: "All field are required!" });
         // }
 
         // Construct the contents array based on the presence of headings
